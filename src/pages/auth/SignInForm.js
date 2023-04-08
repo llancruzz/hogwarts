@@ -49,7 +49,7 @@ function SignInForm() {
     event.preventDefault();
     try {
       await axios.post("/dj-rest-auth/login/", signInData);
-      history.push("/")
+      history.push("/");
     } catch (err) {}
   };
 
@@ -58,7 +58,7 @@ function SignInForm() {
       <Container className={`${styles.Container} p-4 `}>
         <h1 className={styles.Header}>sign in</h1>
 
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <Form.Group controlId="username">
             <Form.Label className="d-none">Username</Form.Label>
             <Form.Control
