@@ -23,3 +23,14 @@
   color: black;
   height: 100vh;
 }
+
+.Image {
+  max-height: 40vh;
+  max-width: 100%;
+  margin-top: 1em;
+  object-fit: contain;
+}
+
+input[type="file"] {
+  display: none;
+}

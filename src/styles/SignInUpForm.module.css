@@ -1,0 +1,51 @@
+.Input {
+  box-sizing: border-box;
+  border-radius: 10px;
+  text-align: center;
+  padding: 5px;
+}
+
+.Header {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.Link {
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
+.Container {
+  background: rgba(203, 45, 62, 0);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.2px);
+  -webkit-backdrop-filter: blur(10.2px);
+  border: 1px solid rgb(211 216 222);
+  text-align: -webkit-center;
+}
+
+.Link span {
+  color: #fb6107;
+}
+
+.SignInCol {
+  height: 320px;
+}
+
+.SignUpCol {
+  height: 375px;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: #3c4e5a;
+}

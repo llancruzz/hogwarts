@@ -1,0 +1,51 @@
+.Button {
+  font-size: 0.8rem;
+  border-color: #d3d8de;
+  color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 4px 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  min-width: 75px;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.2px);
+  -webkit-backdrop-filter: blur(10.2px);
+  cursor: pointer;
+}
+
+.Button:hover {
+  color: black;
+  background: linear-gradient(315deg, #cacaca, #f0f0f0);
+  border-radius: 16px;
+  border-color: transparent;
+  box-shadow: -4px -4px 8px #cacaca, 4px 4px 8px #f6f6f6;
+  backdrop-filter: blur(10.2px);
+  -webkit-backdrop-filter: blur(10.2px);
+  border: 1px solid rgb(211 216 222);
+}
+
+.Button:hover:active {
+  color: black;
+  background: linear-gradient(315deg, #cacaca, #f0f0f0);
+  border-radius: 16px;
+  border-color: transparent;
+  box-shadow: -4px -4px 8px #cacaca, 4px 4px 8px #f6f6f6;
+  backdrop-filter: blur(10.2px);
+  -webkit-backdrop-filter: blur(10.2px);
+  border: 1px solid rgb(211 216 222);
+}
+
+.Button:active {
+  background-color: black !important;
+}
+
+.Button:focus {
+  background-color: black;
+}
+
+.Wide {
+  padding: 10px 40px;
+}
