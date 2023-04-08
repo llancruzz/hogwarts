@@ -1,0 +1,41 @@
+.NavBar {
+  background: rgba(255 255 255 / 50%);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.2px);
+  -webkit-backdrop-filter: blur(10.2px);
+}
+
+.NavLink {
+    color: black;
+    padding: 2px;
+  }
+  
+  .NavLink:hover {
+    color: #3c4e5a;
+  }
+  
+  .Toggler {
+    display: contents;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  i {
+    font-size: 1.6rem;
+    padding: 5px;
+    vertical-align: middle;
+  }
+  
+  .Active {
+    font-weight: bolder;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+  .Logo {
+    height: 40px;
+  }
