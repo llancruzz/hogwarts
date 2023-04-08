@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -11,7 +11,8 @@ const SignUpForm = () => {
   /* 
     Store the values for inputs on Sign Up Form using useState()
     Destructure the useState hook with:
-    signUpData and setSignUpData
+    signUpData and setSignUpData.
+    Create variable history and set it to useHistory().
   */
   const [signUpData, setSignUpData] = useState({
     username: "",
@@ -19,12 +20,15 @@ const SignUpForm = () => {
     password2: "",
   });
   const { username, password1, password2 } = signUpData;
+  const history = useHistory();
 
   /*
   Handle function to be able to type on form fields.
   Call setSignUpData and spread the signUpData.
-  Creates a key value  pair, with the key being the input field name,  
+  Create a key value  pair, with the key being the input field name,  
   and the value being the value entered by the user.
+  Call the useHistory hook to redirect to the sigin page.
+
   */
   const handleChange = (event) => {
     setSignUpData({
@@ -44,6 +48,7 @@ const SignUpForm = () => {
     event.preventDefault();
     try {
       await axios.post("/dj-rest-auth/registration/", signUpData);
+      history.push("/signin");
     } catch (err) {}
   };
 
