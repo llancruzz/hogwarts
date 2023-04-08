@@ -2,7 +2,8 @@
   "name": "hogwarts",
   "version": "0.1.0",
   "engines": {
-    "node": "18.15.0"
+    "node": "16.20.0",
+    "npm": "8.19.4"
   },
   "private": true,
   "dependencies": {
