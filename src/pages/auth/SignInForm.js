@@ -4,7 +4,7 @@ import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import axios from "axios";
@@ -21,6 +21,8 @@ function SignInForm() {
     password: "",
   });
   const { username, password } = signInData;
+
+  const history = useHistory();
 
   /*
   Handle function to be able to type on form fields.
@@ -47,6 +49,7 @@ function SignInForm() {
     event.preventDefault();
     try {
       await axios.post("/dj-rest-auth/login/", signInData);
+      history.push("/")
     } catch (err) {}
   };
 
