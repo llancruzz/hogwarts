@@ -23,6 +23,11 @@ const SignUpForm = () => {
   const history = useHistory();
 
   /*
+  Store all the erros using useState() to be display to the users. 
+  */
+  const [errors, setErrors] = useState({});
+
+  /*
   Handle function to be able to type on form fields.
   Call setSignUpData and spread the signUpData.
   Create a key value  pair, with the key being the input field name,  
@@ -49,7 +54,9 @@ const SignUpForm = () => {
     try {
       await axios.post("/dj-rest-auth/registration/", signUpData);
       history.push("/signin");
-    } catch (err) {}
+    } catch (err) {
+      setErrors(err.response?.data);
+    }
   };
 
   return (
