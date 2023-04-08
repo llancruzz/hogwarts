@@ -22,6 +22,11 @@ function SignInForm() {
   });
   const { username, password } = signInData;
 
+  /*
+  Store all the erros using useState() to be display to the users. 
+  */
+  const [errors, setErrors] = useState({});
+
   const history = useHistory();
 
   /*
@@ -50,7 +55,9 @@ function SignInForm() {
     try {
       await axios.post("/dj-rest-auth/login/", signInData);
       history.push("/");
-    } catch (err) {}
+    } catch (err) {
+      setErrors(err.response?.data);
+    }
   };
 
   return (
@@ -70,6 +77,18 @@ function SignInForm() {
               onChange={handleChange}
             />
           </Form.Group>
+          {/* 
+            Add Alert bootstrap component to display any  error messages.
+            Map over the array  of errors for each key in the error state. 
+            Use conditional chaining to check if the username key is in the errors object, and if so, then produce the Alerts.  
+            Use that dropdown trick to import this Alert component as we use it. Give the Alert a variant of warning so 
+            react-bootstrap will give it a yellow color. And add a key set to index.  Inside our alert, render the error message.
+          */}
+          {errors.username?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
 
           <Form.Group controlId="password">
             <Form.Label className="d-none">Password</Form.Label>
@@ -82,6 +101,12 @@ function SignInForm() {
               onChange={handleChange}
             />
           </Form.Group>
+          {/* Add alert bootstrap to display any error of password1 fields */}
+          {errors.password?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
 
           <Button
             className={`${btnStyles.Button} ${btnStyles.Wide}`}
