@@ -83,7 +83,7 @@ const SignUpForm = () => {
             react-bootstrap will give it a yellow color. And add a key set to index.  Inside our alert, render the error message.
           */}
           {errors.username?.map((message, idx) => (
-            <Alert variant="danger" key={idx}>
+            <Alert variant="warning" key={idx}>
               {message}
             </Alert>
           ))}
@@ -99,6 +99,12 @@ const SignUpForm = () => {
               onChange={handleChange}
             />
           </Form.Group>
+          {/* Add alert bootstrap to display any error of password1 fields */}
+          {errors.password1?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
           <Form.Group controlId="password2">
             <Form.Label className="d-none">Confirm your password</Form.Label>
             <Form.Control
@@ -110,6 +116,12 @@ const SignUpForm = () => {
               onChange={handleChange}
             />
           </Form.Group>
+          {/* Add alert bootstrap to display any error of password2 fields */}
+          {errors.password2?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
           <Button
             className={`${btnStyles.Button} ${btnStyles.Wide}`}
             type="submit"
