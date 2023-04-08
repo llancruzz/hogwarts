@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
-
-import { Form, Button, Col, Container } from "react-bootstrap";
+import { Form, Button, Col, Container, Alert } from "react-bootstrap";
 import axios from "axios";
 
 const SignUpForm = () => {
@@ -20,12 +18,13 @@ const SignUpForm = () => {
     password2: "",
   });
   const { username, password1, password2 } = signUpData;
-  const history = useHistory();
 
   /*
   Store all the erros using useState() to be display to the users. 
   */
   const [errors, setErrors] = useState({});
+
+  const history = useHistory();
 
   /*
   Handle function to be able to type on form fields.
@@ -76,6 +75,18 @@ const SignUpForm = () => {
               onChange={handleChange}
             />
           </Form.Group>
+          {/* 
+            Add Alert bootstrap component to display any  error messages.
+            Map over the array  of errors for each key in the error state. 
+            Use conditional chaining to check if the username key is in the errors object, and if so, then produce the Alerts.  
+            Use that dropdown trick to import this Alert component as we use it. Give the Alert a variant of warning so 
+            react-bootstrap will give it a yellow color. And add a key set to index.  Inside our alert, render the error message.
+          */}
+          {errors.username?.map((message, idx) => (
+            <Alert variant="danger" key={idx}>
+              {message}
+            </Alert>
+          ))}
 
           <Form.Group controlId="password1">
             <Form.Label className="d-none">Password</Form.Label>
