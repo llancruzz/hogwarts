@@ -7,6 +7,7 @@ import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
+import axios from "axios";
 
 function SignInForm() {
   /* 
@@ -34,6 +35,19 @@ function SignInForm() {
       /* KEY | VALUE */
       [event.target.name]: event.target.value,
     });
+  };
+
+  /*
+  Form submit handler:
+  Call preventDefault so that the page doesn't refresh.
+  Create async function: inside a try-catch block, post all the signInData
+  to the endpoint in API application for user login.
+  */
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await axios.post("/dj-rest-auth/login/", signInData);
+    } catch (err) {}
   };
 
   return (
