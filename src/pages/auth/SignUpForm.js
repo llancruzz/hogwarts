@@ -128,6 +128,15 @@ const SignUpForm = () => {
           >
             Sign up
           </Button>
+          {/* 
+            Add alert bootstrap for the so-called non-field-errors, such as when the passwords don’t match. 
+            Under the submit  button, add the Alerts for non_field_errors.    
+          */}
+          {errors.non_field_errors?.map((message, idx) => (
+            <Alert variant="warning" key={idx} className="mt-3">
+              {message}
+            </Alert>
+          ))}
         </Form>
       </Container>
       <Container className="mt-3">
