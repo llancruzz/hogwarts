@@ -41,8 +41,11 @@ const SignUpForm = () => {
               name="password2"
             />
           </Form.Group>
-          <Button variant="primary" type="submit">
-            Submit
+          <Button
+            className={`${btnStyles.Button} ${btnStyles.Wide}`}
+            type="submit"
+          >
+            Sign up
           </Button>
         </Form>
       </Container>
