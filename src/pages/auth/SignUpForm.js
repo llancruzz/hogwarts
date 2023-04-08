@@ -5,13 +5,14 @@ import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
 import { Form, Button, Col, Container } from "react-bootstrap";
+import axios from "axios";
 
 const SignUpForm = () => {
   /* 
     Store the values for inputs on Sign Up Form using useState()
     Destructure the useState hook with:
     signUpData and setSignUpData
-    */
+  */
   const [signUpData, setSignUpData] = useState({
     username: "",
     password1: "",
@@ -24,13 +25,26 @@ const SignUpForm = () => {
   Call setSignUpData and spread the signUpData.
   Creates a key value  pair, with the key being the input field name,  
   and the value being the value entered by the user.
-    */
+  */
   const handleChange = (event) => {
     setSignUpData({
       ...signUpData,
       /* KEY | VALUE */
       [event.target.name]: event.target.value,
     });
+  };
+
+  /*
+  Form submit handler:
+  Call preventDefault so that the page doesn't refresh.
+  Create async function: inside a try-catch block, post all the signUpData
+  to the endpoint in API application for user registration.
+  */
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await axios.post("/dj-rest-auth/registration/", signUpData);
+    } catch (err) {}
   };
 
   return (
