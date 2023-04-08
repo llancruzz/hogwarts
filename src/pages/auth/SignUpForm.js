@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import styles from "../../styles/SignInUpForm.module.css";
@@ -7,6 +7,18 @@ import btnStyles from "../../styles/Button.module.css";
 import { Form, Button, Col, Container } from "react-bootstrap";
 
 const SignUpForm = () => {
+  /* 
+    Store the values for inputs on Sign Up Form using useState()
+    Destructure the useState hook with:
+    signUpData and setSignUpData
+    */
+  const [signUpData, setSignUpData] = useState({
+    username: "",
+    password1: "",
+    password2: "",
+  });
+  const { username, password1, password2 } = signUpData;
+
   return (
     <Col className="my-auto py-2 p-md-2">
       <Container className={`${styles.Container} p-4 `}>
@@ -20,6 +32,7 @@ const SignUpForm = () => {
               type="text"
               placeholder="Username"
               name="username"
+              value={username}
             />
           </Form.Group>
 
@@ -30,6 +43,7 @@ const SignUpForm = () => {
               type="password"
               placeholder="Password"
               name="password1"
+              value={password1}
             />
           </Form.Group>
           <Form.Group controlId="password2">
@@ -39,6 +53,7 @@ const SignUpForm = () => {
               type="password"
               placeholder="Confirm your password"
               name="password2"
+              value={password2}
             />
           </Form.Group>
           <Button
