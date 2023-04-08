@@ -17,3 +17,9 @@
     background-position: 0% 50%;
   }
 }
+
+.Main {
+  padding-top: 130px;
+  color: black;
+  height: 100vh;
+}
