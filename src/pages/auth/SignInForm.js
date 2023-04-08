@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
@@ -9,7 +9,17 @@ import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
 function SignInForm() {
-  //   Add your component logic here
+  /* 
+    Store the values for inputs on Sign in Form using useState()
+    Destructure the useState hook with:
+    signInData and setSignInData.
+    Create variable history and set it to useHistory().
+  */
+  const [signInData, setSignInDate] = useState({
+    username: "",
+    password: "",
+  });
+  const { username, password } = signInData;
 
   return (
     <Col className="my-auto p-0 p-md-2">
@@ -24,6 +34,7 @@ function SignInForm() {
               type="text"
               placeholder="Enter your username"
               name="username"
+              value={username}
             />
           </Form.Group>
 
@@ -34,6 +45,7 @@ function SignInForm() {
               type="password"
               placeholder="Enter your password"
               name="password"
+              value={password}
             />
           </Form.Group>
 
