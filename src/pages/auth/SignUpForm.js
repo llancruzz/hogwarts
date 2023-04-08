@@ -19,6 +19,20 @@ const SignUpForm = () => {
   });
   const { username, password1, password2 } = signUpData;
 
+  /*
+  Handle function to be able to type on form fields.
+  Call setSignUpData and spread the signUpData.
+  Creates a key value  pair, with the key being the input field name,  
+  and the value being the value entered by the user.
+    */
+  const handleChange = (event) => {
+    setSignUpData({
+      ...signUpData,
+      /* KEY | VALUE */
+      [event.target.name]: event.target.value,
+    });
+  };
+
   return (
     <Col className="my-auto py-2 p-md-2">
       <Container className={`${styles.Container} p-4 `}>
@@ -33,6 +47,7 @@ const SignUpForm = () => {
               placeholder="Username"
               name="username"
               value={username}
+              onChange={handleChange}
             />
           </Form.Group>
 
@@ -44,6 +59,7 @@ const SignUpForm = () => {
               placeholder="Password"
               name="password1"
               value={password1}
+              onChange={handleChange}
             />
           </Form.Group>
           <Form.Group controlId="password2">
@@ -54,6 +70,7 @@ const SignUpForm = () => {
               placeholder="Confirm your password"
               name="password2"
               value={password2}
+              onChange={handleChange}
             />
           </Form.Group>
           <Button
