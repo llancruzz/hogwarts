@@ -29,7 +29,7 @@ function SignInForm() {
   Call the useHistory hook to redirect to the home page.
   */
   const handleChange = (event) => {
-    setSignInData({
+    setSignInDate({
       ...signInData,
       /* KEY | VALUE */
       [event.target.name]: event.target.value,
