@@ -114,6 +114,15 @@ function SignInForm() {
           >
             Sign in
           </Button>
+          {/* 
+            Add alert bootstrap for the so-called non-field-errors, such as when the users'username and password don’t match.
+            Under the submit  button, add the Alerts for non_field_errors.    
+          */}
+          {errors.non_field_errors?.map((message, idx) => (
+            <Alert variant="warning" key={idx} className="mt-3">
+              {message}
+            </Alert>
+          ))}
         </Form>
       </Container>
 
