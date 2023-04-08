@@ -32,7 +32,6 @@ const SignUpForm = () => {
   Create a key value  pair, with the key being the input field name,  
   and the value being the value entered by the user.
   Call the useHistory hook to redirect to the sigin page.
-
   */
   const handleChange = (event) => {
     setSignUpData({

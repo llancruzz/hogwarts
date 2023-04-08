@@ -21,6 +21,21 @@ function SignInForm() {
   });
   const { username, password } = signInData;
 
+  /*
+  Handle function to be able to type on form fields.
+  Call setSignInData and spread the signInData.
+  Create a key value  pair, with the key being the input field name,  
+  and the value being the value entered by the user.
+  Call the useHistory hook to redirect to the home page.
+  */
+  const handleChange = (event) => {
+    setSignInData({
+      ...signInData,
+      /* KEY | VALUE */
+      [event.target.name]: event.target.value,
+    });
+  };
+
   return (
     <Col className="my-auto p-0 p-md-2">
       <Container className={`${styles.Container} p-4 `}>
@@ -35,6 +50,7 @@ function SignInForm() {
               placeholder="Enter your username"
               name="username"
               value={username}
+              onChange={handleChange}
             />
           </Form.Group>
 
@@ -46,6 +62,7 @@ function SignInForm() {
               placeholder="Enter your password"
               name="password"
               value={password}
+              onChange={handleChange}
             />
           </Form.Group>
 
