@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
@@ -8,14 +8,14 @@ import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import axios from "axios";
-import { SetCurrentUserContext } from "../../App";
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 function SignInForm() {
   /*
   Access the setCurrentUser function to update user data upon successful sign in.
   Set the setCurrentUser variable to handleSubmit.
   */
-  const setCurrentUser = useContext(SetCurrentUserContext);
+  const setCurrentUser = useSetCurrentUser();
 
   /* 
     Store the values for inputs on Sign in Form using useState()
@@ -23,7 +23,7 @@ function SignInForm() {
     signInData and setSignInData.
     Create variable history and set it to useHistory().
   */
-  const [signInData, setSignInDate] = useState({
+  const [signInData, setSignInData] = useState({
     username: "",
     password: "",
   });
@@ -44,7 +44,7 @@ function SignInForm() {
   Call the useHistory hook to redirect to the home page.
   */
   const handleChange = (event) => {
-    setSignInDate({
+    setSignInData({
       ...signInData,
       /* KEY | VALUE */
       [event.target.name]: event.target.value,
