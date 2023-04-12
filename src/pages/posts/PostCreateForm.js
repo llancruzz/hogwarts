@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -29,6 +29,9 @@ function PostCreateForm() {
   });
   const { title, house, content, image } = postData;
   const history = useHistory();
+
+  // Use and import the useRef hook to declare a new imageInput variable, and set it’s initial value to null.
+  const imageInput = useRef(null)
 
   /*
   Handle function to handle the inputs field's state changes.
@@ -149,6 +152,7 @@ function PostCreateForm() {
                 id="image-upload"
                 accept="image/*"
                 onChange={handleChangeImage}
+                ref={imageInput}
               />
             </Form.Group>
             <div className="d-md-none">{textFields}</div>
