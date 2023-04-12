@@ -3,12 +3,33 @@ import { Container, Navbar, Nav } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
-import { useCurrentUser } from "../contexts/CurrentUserContext";
+import {
+  useCurrentUser,
+  useSetCurrentUser,
+} from "../contexts/CurrentUserContext";
 import ProfilePicture from "./ProfilePicture";
+import axios from "axios";
 
 const NavBar = () => {
   // Call custom useCurrentUser hook to be able to display icons.
   const currentUser = useCurrentUser();
+
+  // Call custom useSetCurrentUser hook to be able to sign out page.
+  const setCurrentUser = useSetCurrentUser();
+
+  /*
+  Handle function to be able to sign out.
+  Make request to the logout endpoint in API.
+  Set the currentUser to null to reflet the users logged out state.
+  */
+  handleSignOut = async () => {
+    try {
+      await axios.post("dj-rest-auth/logout/");
+      setCurrentUser(null);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const createPostIcon = (
     <NavLink
@@ -39,7 +60,7 @@ const NavBar = () => {
       >
         <i className="fa-solid fa-broom-ball"></i>Liked
       </NavLink>
-      <NavLink exact className={styles.NavLink} onClick={() => {}} to="/">
+      <NavLink exact className={styles.NavLink} onClick={handleSignOut} to="/">
         <i className="fa-solid fa-person-running"></i>Sign out
       </NavLink>
       <NavLink
