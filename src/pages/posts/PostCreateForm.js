@@ -9,19 +9,61 @@ import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Asset from "../../components/Asset";
+import { useHistory } from "react-router-dom";
 
 function PostCreateForm() {
   const [errors, setErrors] = useState({});
+
+  /* 
+    Store the values for inputs on Post Create Form using useState()
+    Destructure the useState hook with:
+    postData and setPostData.
+    Create variable history and set it to useHistory().
+  */
+  const [postData, setPostData] = useState({
+    title: "",
+    house: "",
+    content: "",
+    image: "",
+  });
+  const { title, house, content, image } = postData;
+  const history = useHistory();
+
+  /*
+  Handle function to handle the inputs field's state changes.
+  Call setPostData and spread the postData.
+  Create a key value  pair, with the key being the input field name,  
+  and the value being the value entered by the user.
+  Call the useHistory hook to redirect to the post page.
+  */
+  const handlechange = (event) => {
+    setPostData({
+      ...postData,
+      /* KEY | VALUE */
+      [event.target.name]: event.target.value,
+    });
+  };
 
   const textFields = (
     <div className="text-center">
       <Form.Group>
         <Form.Label>Title</Form.Label>
-        <Form.Control type="text" name="title" />
+        <Form.Control
+          type="text"
+          name="title"
+          value={title}
+          onChange={handlechange}
+        />
       </Form.Group>
       <Form.Group>
         <Form.Label>House</Form.Label>
-        <Form.Control as="select" name="house" aria-label="house">
+        <Form.Control
+          as="select"
+          name="house"
+          aria-label="house"
+          value={house}
+          onChange={handlechange}
+        >
           <option>Select your House</option>
           <option value="Gryffindor">Gryffindor</option>
           <option value="Slytherin">Slytherin</option>
@@ -31,7 +73,13 @@ function PostCreateForm() {
       </Form.Group>
       <Form.Group>
         <Form.Label>Content</Form.Label>
-        <Form.Control as="textarea" rows={6} name="content" />
+        <Form.Control
+          as="textarea"
+          rows={6}
+          name="content"
+          value={content}
+          onChange={handlechange}
+        />
       </Form.Group>
 
       <Button
