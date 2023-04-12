@@ -9,6 +9,17 @@ const NavBar = () => {
   // Call custom useCurrentUser hook to be able to display icons.
   const currentUser = useCurrentUser();
 
+  const createPostIcon = (
+    <NavLink
+      exact
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/posts/create"
+    >
+      <i className="fa-solid fa-wand-sparkles"></i>Create
+    </NavLink>
+  );
+
   const loggedInIcons = <>{currentUser?.username}</>;
   const loggedOutIcons = (
     <>
@@ -39,7 +50,7 @@ const NavBar = () => {
             <img src={logo} alt="logo hogwarts" height="100" />
           </Navbar.Brand>
         </NavLink>
-
+        {currentUser && createPostIcon}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-left">
