@@ -4,6 +4,7 @@ import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
+import ProfilePicture from "./ProfilePicture";
 
 const NavBar = () => {
   // Call custom useCurrentUser hook to be able to display icons.
@@ -46,7 +47,11 @@ const NavBar = () => {
         className={styles.NavLink}
         to={`/profiles/${currentUser?.profile_id}`}
       >
-        <img src={currentUser?.profile_image} alt="profile avatar" />
+        <ProfilePicture
+          src={currentUser?.profile_image}
+          text="Profile"
+          height={40}
+        />
       </NavLink>
     </>
   );
