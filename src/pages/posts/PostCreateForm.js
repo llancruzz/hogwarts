@@ -11,6 +11,7 @@ import btnStyles from "../../styles/Button.module.css";
 import Asset from "../../components/Asset";
 import { useHistory } from "react-router-dom";
 import { Image } from "react-bootstrap";
+import { axiosReq } from "../../api/axiosDefaults";
 
 function PostCreateForm() {
   const [errors, setErrors] = useState({});
@@ -28,17 +29,18 @@ function PostCreateForm() {
     image: "",
   });
   const { title, house, content, image } = postData;
+
+  // Call the useHistory hook to redirect to the user's post page.
   const history = useHistory();
 
   // Use and import the useRef hook to declare a new imageInput variable, and set it’s initial value to null.
-  const imageInput = useRef(null)
+  const imageInput = useRef(null);
 
   /*
   Handle function to handle the inputs field's state changes.
   Call setPostData and spread the postData.
   Create a key value  pair, with the key being the input field name,  
   and the value being the value entered by the user.
-  Call the useHistory hook to redirect to the post page.
   */
   const handlechange = (event) => {
     setPostData({
@@ -63,6 +65,32 @@ function PostCreateForm() {
         ...postData,
         image: URL.createObjectURL(event.target.files[0]),
       });
+    }
+  };
+
+  /*
+  Form submit handler:
+  Call preventDefault so that the page doesn't refresh.
+  Create async function: inside a try-catch block, post all the formData to the endpoint in API application for user posts.
+  Append all four relevant pieces of data: title,house,content and image.
+  */
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+
+    formData.append("title", title);
+    formData.append("house", house);
+    formData.append("content", content);
+    formData.append("image", imageInput.current.files[0]);
+
+    try {
+      const { data } = await axiosReq.post("/posts/", formData);
+      history.push(`/posts/${data.id}`);
+    } catch (err) {
+      console.log(err);
+      if (err.response?.status !== 401) {
+        setErrors(err.response?.data);
+      }
     }
   };
 
@@ -117,7 +145,7 @@ function PostCreateForm() {
   );
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Row>
         <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
           <Container
