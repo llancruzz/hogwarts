@@ -8,13 +8,31 @@ import Upload from "../../assets/upload.png";
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
+import Asset from "../../components/Asset";
 
 function PostCreateForm() {
   const [errors, setErrors] = useState({});
 
   const textFields = (
     <div className="text-center">
-      {/* form fields here */}
+      <Form.Group>
+        <Form.Label>Title</Form.Label>
+        <Form.Control type="text" name="title" />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>House</Form.Label>
+        <Form.Control as="select" name="house" aria-label="house">
+          <option>Select your House</option>
+          <option value="Gryffindor">Gryffindor</option>
+          <option value="Slytherin">Slytherin</option>
+          <option value="Ravenclaw">Ravenclaw</option>
+          <option value="Hufflepuff">Hufflepuff</option>
+        </Form.Control>
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Content</Form.Label>
+        <Form.Control as="textarea" rows={6} name="content" />
+      </Form.Group>
 
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
@@ -40,7 +58,7 @@ function PostCreateForm() {
                 className="d-flex justify-content-center"
                 htmlFor="image-upload"
               >
-                ASSET
+                <Asset src={Upload} message="Click to upload an image" />
               </Form.Label>
             </Form.Group>
             <div className="d-md-none">{textFields}</div>
