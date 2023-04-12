@@ -1,11 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import appStyles from "../../App.module.css";
+import { useParams } from "react-router-dom";
+import { axiosReq } from "../../api/axiosDefaults";
 
 function PostPage() {
-  // Add your logic here
+  /*
+  Fetch data about the post with the id that is in the url. 
+  Use and  auto-import the useParams hook and destructure it in place with 
+  the name of the parameter that it is set in the route, which is ‘id’.  
+  */
+  const { id } = useParams();
+
+  /* 
+  Store the values for inputs on Post Form using useState()
+  Destructure the useState hook with:
+  post and setPost.
+  */
+  const [post, setPost] = useState({ results: [] });
+
+  /*
+  Create async function and useEffect to fetch the post on mount.
+  Make request to the API.
+  */
+  useEffect(() => {
+    const handleMount = async () => {
+      try {
+        const [{ data: post }] = await Promise.all([
+          axiosReq.get(`/posts/${id}`),
+        ]);
+        setPost({ results: [post] });
+        console.log(post);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    handleMount();
+  }, [id]);
 
   return (
     <Row className="h-100 m-1">
