@@ -10,7 +10,7 @@ import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Asset from "../../components/Asset";
 import { useHistory } from "react-router-dom";
-import { Image } from "react-bootstrap";
+import { Alert, Image } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
 
 function PostCreateForm() {
@@ -105,6 +105,12 @@ function PostCreateForm() {
           onChange={handlechange}
         />
       </Form.Group>
+      {/* Add alert bootstrap to display any error of empty title fields */}
+      {errors.title?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Form.Group>
         <Form.Label>House</Form.Label>
         <Form.Control
@@ -120,6 +126,11 @@ function PostCreateForm() {
           <option value="Ravenclaw">Ravenclaw</option>
           <option value="Hufflepuff">Hufflepuff</option>
         </Form.Control>
+        {errors.house?.map((message, idx) => (
+          <Alert variant="warning" className={appStyles.Alert} key={idx}>
+            {message}
+          </Alert>
+        ))}
       </Form.Group>
       <Form.Group>
         <Form.Label>Content</Form.Label>
@@ -131,6 +142,12 @@ function PostCreateForm() {
           onChange={handlechange}
         />
       </Form.Group>
+      {/* Add alert bootstrap to display any error of empty content fields */}
+      {errors.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
@@ -183,6 +200,12 @@ function PostCreateForm() {
                 ref={imageInput}
               />
             </Form.Group>
+            {/* Add alert bootstrap to display any error of empty image fields */}
+            {errors.image?.map((message, idx) => (
+              <Alert variant="danger" key={idx}>
+                {message}
+              </Alert>
+            ))}
             <div className="d-md-none">{textFields}</div>
           </Container>
         </Col>
