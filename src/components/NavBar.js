@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Container, Navbar, Nav } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
@@ -16,6 +16,25 @@ const NavBar = () => {
 
   // Call custom useSetCurrentUser hook to be able to sign out page.
   const setCurrentUser = useSetCurrentUser();
+
+  // Toggle burger navbar expanded.
+  const [expanded, setExpanded] = useState(false);
+
+  // Create variable ref to instantiate a useRef() that holds a reference to the burger icon.
+  const ref = useRef(null);
+
+  // Handle function to allow users to close the burger navbar when it is clicked outside.
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setExpanded(false);
+      }
+    };
+    document.addEventListener("mouseup", handleClickOutside);
+    return () => {
+      document.removeEventListener("mouseup", handleClickOutside);
+    };
+  }, [ref]);
 
   /*
   Handle function to be able to sign out.
@@ -98,7 +117,12 @@ const NavBar = () => {
   );
 
   return (
-    <Navbar className={styles.NavBar} fixed="top" expand="md">
+    <Navbar
+      expanded={expanded}
+      className={styles.NavBar}
+      fixed="top"
+      expand="md"
+    >
       <Container>
         <NavLink to="/">
           <Navbar.Brand>
@@ -106,7 +130,11 @@ const NavBar = () => {
           </Navbar.Brand>
         </NavLink>
         {currentUser && createPostIcon}
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle
+          ref={ref}
+          onClick={() => setExpanded(!expanded)}
+          aria-controls="basic-navbar-nav"
+        />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-left">
             <NavLink
