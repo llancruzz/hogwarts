@@ -6,6 +6,7 @@ import "./api/axiosDefaults";
 import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
 import PostCreateForm from "./pages/posts/PostCreateForm";
+import PostPage from "./pages/posts/PostPage";
 
 function App() {
   // Providers will allow both the currentUser value and the function to update it, to be available to every child component in application.
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
+          <Route exact path="/post/:id" render={() => <PostPage />} />
           <Route render={() => <p>Page Not Fond!</p>} />
         </Switch>
       </Container>
