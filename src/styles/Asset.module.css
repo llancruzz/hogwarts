@@ -1,0 +1,9 @@
+.Asset {
+  display: contents;
+}
+
+.Image {
+  max-height: 120px;
+  max-width: 120px;
+  margin-top: 2em;
+}
