@@ -22,7 +22,7 @@ const NavBar = () => {
   Make request to the logout endpoint in API.
   Set the currentUser to null to reflet the users logged out state.
   */
-  handleSignOut = async () => {
+  const handleSignOut = async () => {
     try {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
