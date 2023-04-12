@@ -20,7 +20,36 @@ const NavBar = () => {
     </NavLink>
   );
 
-  const loggedInIcons = <>{currentUser?.username}</>;
+  const loggedInIcons = (
+    <>
+      <NavLink
+        exact
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/feed"
+      >
+        <i className="fa-solid fa-book-open"></i>Feed
+      </NavLink>
+      <NavLink
+        exact
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/liked"
+      >
+        <i className="fa-solid fa-broom-ball"></i>Liked
+      </NavLink>
+      <NavLink exact className={styles.NavLink} onClick={() => {}} to="/">
+        <i className="fa-solid fa-person-running"></i>Sign out
+      </NavLink>
+      <NavLink
+        exact
+        className={styles.NavLink}
+        to={`/profiles/${currentUser?.profile_id}`}
+      >
+        <img src={currentUser?.profile_image} alt="profile avatar" />
+      </NavLink>
+    </>
+  );
   const loggedOutIcons = (
     <>
       <NavLink
@@ -60,7 +89,7 @@ const NavBar = () => {
               activeClassName={styles.Active}
               to="/"
             >
-              <i className="fas fa-home"></i>Home
+              <i className="fa-brands fa-fort-awesome"></i>Home
             </NavLink>
             {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
