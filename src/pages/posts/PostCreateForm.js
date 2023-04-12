@@ -44,6 +44,24 @@ function PostCreateForm() {
     });
   };
 
+  /*
+  Handlle change image function:
+  Check if the user has chosen a file to upload by checking if there is a file in the files array. 
+  Call the setPostData function,  spread our postData, and then set the image attribute’s value using 
+  URL.createObjectURL and pass it the file in the files array. URL.createObjectURL creates a local  link to the file passed into it.  
+  Access the files array on event.target and choose the first one.
+  URL.revokeObjectURL to clear  the browser's reference to the previous file or if user decides to change  their image file after adding one
+  */
+  const handleChangeImage = (event) => {
+    if (event.target.files.length) {
+      URL.revokeObjectURL(image);
+      setPostData({
+        ...postData,
+        image: URL.createObjectURL(event.target.files[0]),
+      });
+    }
+  };
+
   const textFields = (
     <div className="text-center">
       <Form.Group>
@@ -108,7 +126,11 @@ function PostCreateForm() {
               >
                 <Asset src={Upload} message="Click to upload an image" />
               </Form.Label>
-              <Form.File id="image-upload" accept="image/*" />
+              <Form.File
+                id="image-upload"
+                accept="image/*"
+                onChange={handleChangeImage}
+              />
             </Form.Group>
             <div className="d-md-none">{textFields}</div>
           </Container>
