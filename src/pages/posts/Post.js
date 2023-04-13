@@ -4,6 +4,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ProfilePicture from "../../components/ProfilePicture";
+import { axiosRes } from "../../api/axiosDefaults";
 
 const Post = (props) => {
   // Destructure props
@@ -21,6 +22,7 @@ const Post = (props) => {
     house,
     updated_at,
     postPage,
+    setPosts,
   } = props;
 
   /*
@@ -29,6 +31,27 @@ const Post = (props) => {
   */
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+
+  /*
+  Handle function to like post:
+  Import axiosRes so that API knows which post the user liked.
+  setPosts() function to update the likes_count.
+  */
+  const handleLike = async () => {
+    try {
+      const { data } = await axiosRes.post("/likes/", { post: id });
+      setPosts((prevPosts) => ({
+        ...prevPosts,
+        results: prevPosts.results.map((post) => {
+          return post.id === id
+            ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
+            : post;
+        }),
+      }));
+    } catch (err) {
+      // console.log(err);
+    }
+  };
 
   return (
     <Card className={styles.Post}>
@@ -50,7 +73,7 @@ const Post = (props) => {
       <Card.Body>
         {title && <Card.Title className="text-center">{title}</Card.Title>}
         {content && <Card.Text>{content}</Card.Text>}
-        <div className={styles.PostBar}>
+        <div className={`text-center ${styles.PostBar}`}>
           {is_owner ? (
             <OverlayTrigger
               placement="top"
@@ -63,7 +86,7 @@ const Post = (props) => {
               <i className={`fas far-heart ${styles.Heart}`} />
             </span>
           ) : currentUser ? (
-            <span onClick={() => {}}>
+            <span onClick={handleLike}>
               <i className={`far fa-heart ${styles.HeartOutline}`} />
             </span>
           ) : (
