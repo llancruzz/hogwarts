@@ -94,6 +94,7 @@ const Post = (props) => {
       <Card.Body>
         {title && <Card.Title className="text-center">{title}</Card.Title>}
         {content && <Card.Text>{content}</Card.Text>}
+        {/* Add bage house category here */}
         <div className={`text-center ${styles.PostBar}`}>
           {is_owner ? (
             <OverlayTrigger
@@ -104,7 +105,7 @@ const Post = (props) => {
             </OverlayTrigger>
           ) : like_id ? (
             <span onClick={handleUnlike}>
-              <i className={`fas far-heart ${styles.Heart}`} />
+              <i className={`fas fa-heart ${styles.Heart}`} />
             </span>
           ) : currentUser ? (
             <span onClick={handleLike}>
