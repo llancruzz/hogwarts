@@ -1,0 +1,27 @@
+.Post {
+  min-height: 350px;
+  background: rgba(203, 45, 62, 0);
+  border-radius: 16px;
+  backdrop-filter: blur(10.2px);
+  -webkit-backdrop-filter: blur(10.2px);
+  border: 1px solid rgb(211 216 222);
+  margin-bottom: 2em;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.Post figure,
+h5 {
+  margin: 0 0;
+}
+
+.Heart {
+  color: red;
+}
+
+.Heart:hover {
+  color: rgb(173, 0, 0);
+}
+
+.HeartOutline:hover {
+  color: red;
+}
