@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import ProfilePicture from "../../components/ProfilePicture";
 
 const Post = (props) => {
+  // Destructure props
   const {
     id,
     owner,
@@ -19,6 +20,7 @@ const Post = (props) => {
     image,
     house,
     updated_at,
+    postPage,
   } = props;
 
   /*
@@ -38,6 +40,7 @@ const Post = (props) => {
           </Link>
           <div className="d-flex align-items-center">
             <span>{updated_at}</span>
+            {is_owner && postPage && "..."}
           </div>
         </Media>
       </Card.Body>
