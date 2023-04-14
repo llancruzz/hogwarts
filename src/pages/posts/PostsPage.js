@@ -3,13 +3,14 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
 import { useLocation } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import Post from "./Post";
 import NoResults from "../../assets/no-results.png";
 import Asset from "../../components/Asset";
+import { Badge } from "react-bootstrap";
+import badgeStyles from "../../styles/PostsPage.module.css";
 
 function PostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
@@ -21,7 +22,11 @@ function PostsPage({ message, filter = "" }) {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const { data } = await axiosReq.get(`/posts/?${filter}search=${query}`);
+        const { data } = await axiosReq.get(
+          `/posts/?${filter}search=${query}${
+            house !== null ? `&house=${house}` : ""
+          }`
+        );
         setPosts(data);
         setHasloaded(true);
       } catch (err) {
@@ -29,13 +34,60 @@ function PostsPage({ message, filter = "" }) {
       }
     };
     setHasloaded(false);
-    fetchPosts();
-  }, [filter, query, pathname]);
+    const timer = setTimeout(() => {
+      fetchPosts();
+    }, 500);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [filter, query, house, pathname]);
 
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles mobile</p>
+        <Badge
+          variant="dark"
+          pill
+          className={badgeStyles.Badge}
+          onClick={() => setHouse(null)}
+        >
+          ALL
+        </Badge>
+        <Badge
+          variant="dark"
+          pill
+          className={badgeStyles.Badge}
+          onClick={() => setHouse("Gryffindor")}
+        >
+          Gryffindor
+        </Badge>
+        <Badge
+          variant="dark"
+          pill
+          className={badgeStyles.Badge}
+          onClick={() => setHouse("Slytherin")}
+        >
+          Slytherin
+        </Badge>
+        <Badge
+          variant="dark"
+          pill
+          className={badgeStyles.Badge}
+          onClick={() => setHouse("Ravenclaw")}
+        >
+          Ravenclaw
+        </Badge>
+        <Badge
+          variant="dark"
+          pill
+          className={badgeStyles.Badge}
+          onClick={() => setHouse("Hufflepuff")}
+        >
+          Hufflepuff
+        </Badge>
+
+        {/* Text search bar filters and keywords */}
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
           className={styles.SearchBar}
