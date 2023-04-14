@@ -6,8 +6,19 @@ import styles from "../../styles/CommentCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
 const CommentCreateForm = (props) => {
+  const { post, setPost, setComments, profileImage, profile_id } = props;
+  const [content, setContent] = useState("");
+
+  /*
+  Handle function to be able to post on form comment fields.
+  Call setContent and get the value input.
+  */
+  const handleChange = (event) => {
+    setContent(event.target.value);
+  };
+
   return (
-    <Form className={`mt-2 ${styles.Form}`}>
+    <Form className="mt-2">
       <Form.Group>
         <InputGroup>
           <Link>
@@ -17,6 +28,8 @@ const CommentCreateForm = (props) => {
             className={styles.Comment}
             placeholder="Say something"
             as="textarea"
+            value={content}
+            onChange={handleChange}
             rows={2}
           />
         </InputGroup>
