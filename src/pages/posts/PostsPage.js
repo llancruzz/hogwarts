@@ -12,6 +12,7 @@ import Asset from "../../components/Asset";
 import { Badge } from "react-bootstrap";
 import badgeStyles from "../../styles/PostsPage.module.css";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
 
 function PostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
@@ -115,7 +116,7 @@ function PostsPage({ message, filter = "" }) {
                 dataLength={posts.results.length}
                 loader={<Asset spinner />}
                 hasMore={!!posts.next}
-                next={() => {}}
+                next={() => fetchMoreData(posts, setPosts)}
               />
             ) : (
               <Container className={styles.Container}>
