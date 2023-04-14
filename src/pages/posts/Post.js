@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import ProfilePicture from "../../components/ProfilePicture";
 import { axiosRes } from "../../api/axiosDefaults";
 import postStyles from "../../styles/PostsPage.module.css";
+import { MoreDropdown } from "../../components/MoreDropdown";
 
 const Post = (props) => {
   // Destructure props
@@ -85,7 +86,7 @@ const Post = (props) => {
           </Link>
           <div className="d-flex align-items-center">
             <span>{updated_at}</span>
-            {is_owner && postPage && "..."}
+            {is_owner && postPage && <MoreDropdown />}
           </div>
         </Media>
       </Card.Body>
