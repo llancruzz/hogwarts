@@ -1,15 +1,15 @@
-import React from "react";
-import { Form, InputGroup } from "react-bootstrap";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import ProfilePicture from "../../components/ProfilePicture";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
 import styles from "../../styles/CommentCreateEditForm.module.css";
-import btnStyles from "../../styles/Button.module.css";
 import { axiosRes } from "../../api/axiosDefaults";
+import ProfilePicture from "../../components/ProfilePicture";
+import btnStyles from "../../styles/Button.module.css";
 
 function CommentCreateForm(props) {
   const { post, setPost, setComments, profileImage, profile_id } = props;
   const [content, setContent] = useState("");
-
   /*
   Handle function to be able to post on form comment fields.
   Call setContent and get the value input.
@@ -17,7 +17,6 @@ function CommentCreateForm(props) {
   const handleChange = (event) => {
     setContent(event.target.value);
   };
-
   /*
   Form submit handler:
   Call preventDefault so that the page doesn't refresh.
@@ -48,34 +47,33 @@ function CommentCreateForm(props) {
       console.log(err);
     }
   };
+
+  return (
+    <Form className={`mt-2 ${styles.Form}`} onSubmit={handleSubmit}>
+      <Form.Group>
+        <InputGroup>
+          <Link to={`/profiles/${profile_id}`}>
+            <ProfilePicture src={profileImage} />
+          </Link>
+          <Form.Control
+            className={styles.Comment}
+            placeholder="Leave a comment..."
+            as="textarea"
+            value={content}
+            onChange={handleChange}
+            rows={2}
+          />
+        </InputGroup>
+      </Form.Group>
+      <button
+        className={`${btnStyles.Button} btn d-block ml-auto`}
+        disabled={!content.trim()}
+        type="submit"
+      >
+        post
+      </button>
+    </Form>
+  );
 }
-
-return (
-  <Form className="mt-2" onSubmit={handleSubmit}>
-    <Form.Group>
-      <InputGroup>
-        <Link>
-          <ProfilePicture />
-        </Link>
-        <Form.Control
-          className={styles.Comment}
-          placeholder="Say something"
-          as="textarea"
-          value={content}
-          onChange={handleChange}
-          rows={2}
-        />
-      </InputGroup>
-    </Form.Group>
-
-    <Button
-      className={`${btnStyles.Button} btn d-block ml-auto`}
-      disabled={!content.trim()}
-      type="submit"
-    >
-      post
-    </Button>
-  </Form>
-);
 
 export default CommentCreateForm;
