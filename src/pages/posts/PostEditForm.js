@@ -96,6 +96,7 @@ function PostEditForm() {
   Call preventDefault so that the page doesn't refresh.
   Create async function: inside a try-catch block, post all the formData to the endpoint in API application for user posts.
   Append all four relevant pieces of data: title,house,content and image.
+  Check if imageInput element has a file before updating the post.
   */
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -104,16 +105,20 @@ function PostEditForm() {
     formData.append("title", title);
     formData.append("house", house);
     formData.append("content", content);
-    formData.append("image", imageInput.current.files[0]);
+
+    // Check if the image already has a file before to edit the post.
+    if (imageInput?.current?.files[0]) {
+      formData.append("image", imageInput.current.files[0]);
+    }
 
     try {
-      const { data } = await axiosReq.post("/posts/", formData);
-      history.push(`/posts/${data.id}`);
+      await axiosReq.put(`/posts/${id}/`, formData);
+      history.push(`/posts/${id}`);
     } catch (err) {
-      console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
+      console.log(err);
     }
   };
 
