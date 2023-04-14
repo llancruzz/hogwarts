@@ -45,6 +45,20 @@ const Post = (props) => {
   };
 
   /*
+  Handle function to delete post owner:
+  Make request api axiosRes to post id.
+  Call goBack() on history to redirect the user. 
+  */
+  const handleDelete = async () => {
+    try {
+      await axiosRes.delete(`/posts/${id}/`);
+      history.goBack();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  /*
   Handle function to like post:
   Import axiosRes so that API knows which post the user liked.
   setPosts() function to update the likes_count.
@@ -96,7 +110,12 @@ const Post = (props) => {
           </Link>
           <div className="d-flex align-items-center">
             <span>{updated_at}</span>
-            {is_owner && postPage && <MoreDropdown handleEdit={handleEdit} />}
+            {is_owner && postPage && (
+              <MoreDropdown
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+              />
+            )}
           </div>
         </Media>
       </Card.Body>
