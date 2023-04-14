@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Badge, Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import ProfilePicture from "../../components/ProfilePicture";
 import { axiosRes } from "../../api/axiosDefaults";
 import postStyles from "../../styles/PostsPage.module.css";
@@ -33,6 +33,16 @@ const Post = (props) => {
   */
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+
+  const history = useHistory();
+
+  /*
+  Handle function to edit post:
+  Use useHistory to redirect the post owner to the urls edit.
+  */
+  const handleEdit = () => {
+    history.push(`/posts/${id}/edit`);
+  };
 
   /*
   Handle function to like post:
@@ -86,7 +96,7 @@ const Post = (props) => {
           </Link>
           <div className="d-flex align-items-center">
             <span>{updated_at}</span>
-            {is_owner && postPage && <MoreDropdown />}
+            {is_owner && postPage && <MoreDropdown handleEdit={handleEdit} />}
           </div>
         </Media>
       </Card.Body>

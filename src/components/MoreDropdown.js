@@ -15,7 +15,8 @@ const ThreeDotsIcon = React.forwardRef(({ onClick }, ref) => (
   />
 ));
 
-export const MoreDropdown = () => {
+// Destructure handleEdit and handleDelete function
+export const MoreDropdown = ({ handleEdit }) => {
   return (
     <Dropdown className="ml-auto" drop="left">
       <Dropdown.Toggle as={ThreeDotsIcon} />
@@ -23,7 +24,7 @@ export const MoreDropdown = () => {
       <Dropdown.Menu className="text-center">
         <Dropdown.Item
           className={styles.DropdownItem}
-          onClick={() => {}}
+          onClick={handleEdit}
           aria-label="edit"
         >
           <i className="fas fa-edit" />
