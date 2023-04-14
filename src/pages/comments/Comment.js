@@ -62,7 +62,7 @@ const Comment = (props) => {
         <Link to={`/profiles/${profile_id}`}>
           <ProfilePicture src={profile_image} />
         </Link>
-        <Media.Body>
+        <Media.Body className="align-self-center ml-2">
           <span className={styles.Owner}>{owner}</span>
           <span className={styles.Date}>{updated_at}</span>
           <p>{content}</p>
