@@ -28,6 +28,16 @@
   background-color: black;
 }
 
+.Container {
+  background: rgba(203, 45, 62, 0);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.2px);
+  -webkit-backdrop-filter: blur(10.2px);
+  border: 1px solid rgb(211 216 222);
+  text-align: -webkit-center;
+}
+
 @media all and (max-width: 991px) {
   .Badge {
     font-size: 0.9rem;
