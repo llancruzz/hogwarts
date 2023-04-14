@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Badge, Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ProfilePicture from "../../components/ProfilePicture";
 import { axiosRes } from "../../api/axiosDefaults";
+import postStyles from "../../styles/PostsPage.module.css";
 
 const Post = (props) => {
   // Destructure props
@@ -94,7 +95,11 @@ const Post = (props) => {
       <Card.Body>
         {title && <Card.Title className="text-center">{title}</Card.Title>}
         {content && <Card.Text>{content}</Card.Text>}
-        {/* Add bage house category here */}
+        <Card.Text className="text-center">
+          <Badge variant="dark" className={postStyles.Badge}>
+            {house}
+          </Badge>
+        </Card.Text>
         <div className={`text-center ${styles.PostBar}`}>
           {is_owner ? (
             <OverlayTrigger
