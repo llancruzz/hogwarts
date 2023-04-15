@@ -4,6 +4,7 @@ import btnStyles from "../../styles/Button.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import ProfilePicture from "../../components/ProfilePicture";
 import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 const Profile = (props) => {
   // Access the data within the profile obj destructuring data.
@@ -25,6 +26,20 @@ const Profile = (props) => {
       </div>
       <div className={`mx-2 ${styles.WordBreak}`}>
         <strong>{owner}</strong>
+      </div>
+      <div className={`text-right ${!mobile && "ml-auto"}`}>
+        {!mobile &&
+          currentUser &&
+          !is_owner &&
+          (following_id ? (
+            <Button className={btnStyles.Button} onClick={() => {}}>
+              unfollow
+            </Button>
+          ) : (
+            <Button className={btnStyles.Button} onClick={() => {}}>
+              follow
+            </Button>
+          ))}
       </div>
     </div>
   );
