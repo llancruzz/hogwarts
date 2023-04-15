@@ -1,4 +1,6 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
+import { useCurrentUser } from "./CurrentUserContext";
+import { axiosReq } from "../api/axiosDefaults";
 
 /* 
 useContext()provides a way to pass through the component tree without having to pass props down manually at every level.
@@ -20,7 +22,7 @@ export const ProfileDataProvider = ({ children }) => {
     popularProfiles: { results: [] },
   });
 
-  const currentUser = useCurrentUser();
+  const currentUser = useCurrentUser;
 
   // Fetch popularProfiles data on mount using the useEffect hook.
   useEffect(() => {
@@ -39,14 +41,14 @@ export const ProfileDataProvider = ({ children }) => {
     };
     handleMount();
   }, [currentUser]);
-};
 
-// Add ProfileDataContext.Provider and expose the profileData value.
-// Add SetProfileDataContext.Provider and expose the setProfileData value.
-return (
-  <ProfileDataContext.Provider value={profileData}>
-    <SetProfileDataContext.Provider value={setProfileData}>
-      {children}
-    </SetProfileDataContext.Provider>
-  </ProfileDataContext.Provider>
-);
+  // Add ProfileDataContext.Provider and expose the profileData value.
+  // Add SetProfileDataContext.Provider and expose the setProfileData value.
+  return (
+    <ProfileDataContext.Provider value={profileData}>
+      <SetProfileDataContext.Provider value={setProfileData}>
+        {children}
+      </SetProfileDataContext.Provider>
+    </ProfileDataContext.Provider>
+  );
+};
