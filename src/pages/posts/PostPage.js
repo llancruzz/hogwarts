@@ -9,6 +9,10 @@ import Post from "./Post";
 import CommentCreateForm from "../comments/CommentCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Comment from "../comments/Comment";
+import InfiniteScroll from "react-infinite-scroll-component";
+import Asset from "../../components/Asset";
+import { fetchMoreData } from "../../utils/utils";
+import styles from "../../styles/CommentCreateEditForm.module.css";
 
 function PostPage() {
   /*
@@ -66,20 +70,28 @@ function PostPage() {
           ) : comments.results.length ? (
             "Comments"
           ) : null}
-          {comments.results.length ? (
-            comments.results.map((comment) => (
-              <Comment
-                key={comment.id}
-                {...comment}
-                setPost={setPost}
-                setComments={setComments}
+          <Container className={`${appStyles.Content} ${styles.Form}`}>
+            {comments.results.length ? (
+              <InfiniteScroll
+                children={comments.results.map((comment) => (
+                  <Comment
+                    key={comment.id}
+                    {...comment}
+                    setPost={setPost}
+                    setComments={setComments}
+                  />
+                ))}
+                dataLength={comments.results.length}
+                loader={<Asset spinner />}
+                hasMore={!!comments.next}
+                next={() => fetchMoreData(comments, setComments)}
               />
-            ))
-          ) : currentUser ? (
-            <span>No comments yet, be the first to comment!</span>
-          ) : (
-            <span>No comments... yet</span>
-          )}
+            ) : currentUser ? (
+              <span>No comments yet, be the first to comment!</span>
+            ) : (
+              <span>No comments... yet</span>
+            )}
+          </Container>
         </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
