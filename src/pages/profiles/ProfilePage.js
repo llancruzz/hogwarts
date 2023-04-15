@@ -7,18 +7,46 @@ import styles from "../../styles/ProfilePage.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import PopularProfiles from "./PopularProfiles";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { useParams } from "react-router-dom";
+import {
+  useProfileData,
+  useSetProfileData,
+} from "../../contexts/ProfileDataContext";
+import { axiosReq } from "../../api/axiosDefaults";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
   // Call useCurrentUser() to get the currentUser object
   const currentUser = useCurrentUser();
-
+  // Extract the id from the URL by useParams() to know which profile to fetch.
+  const { id } = useParams();
+  // Define function to updtade the pageProfile data calling useSetProfileData()
+  const setProfileData = useSetProfileData();
+  // Access the pageProfile destructuring and call useProfileData()
+  const { pageProfile } = useProfileData();
+  // Access a single profile object from the results array
+  const [profile] = pageProfile.results;
   /*
   Called the useEffect hook to setHasLoaded to true.
+  Fetch the post, comments and user profile.
   */
   useEffect(() => {
-    setHasLoaded(true);
-  }, []);
+    const fetchData = async () => {
+      try {
+        const [{ data: pageProfile }] = await Promise.all([
+          axiosReq.get(`/profiles/${id}`),
+        ]);
+        setProfileData((prevState) => ({
+          ...prevState,
+          pageProfile: { results: [pageProfile] },
+        }));
+        setHasLoaded(true);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
+  }, [id, setProfileData]);
 
   // Hold the main profile header.
   const mainProfile = (
