@@ -13,7 +13,7 @@ import {
   useSetProfileData,
 } from "../../contexts/ProfileDataContext";
 import { axiosReq } from "../../api/axiosDefaults";
-import { Image } from "react-bootstrap";
+import { Button, Image } from "react-bootstrap";
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -27,6 +27,9 @@ function ProfilePage() {
   const { pageProfile } = useProfileData();
   // Access a single profile object from the results array
   const [profile] = pageProfile.results;
+  // Check if logged in user is the profiles's owner.
+  const is_owner = currentUser?.username === profile?.owner;
+
   /*
   Called the useEffect hook to setHasLoaded to true.
   Fetch the post, comments and user profile.
@@ -78,7 +81,17 @@ function ProfilePage() {
           </Row>
         </Col>
         <Col lg={3} className="text-lg-right">
-          <p>Follow button</p>
+          {currentUser &&
+            !is_owner &&
+            (profile?.following_id ? (
+              <Button className={`${btnStyles.Button}`} onClick={() => {}}>
+                unfollow
+              </Button>
+            ) : (
+              <Button className={`${btnStyles.Button}`} onClick={() => {}}>
+                follow
+              </Button>
+            ))}
         </Col>
         <Col className="p-3">Profile content</Col>
       </Row>
