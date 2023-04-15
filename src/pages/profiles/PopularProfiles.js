@@ -3,6 +3,7 @@ import appStyles from "../../styles/PopularProfiles.module.css";
 import { Container } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import Asset from "../../components/Asset";
 
 const PopularProfiles = () => {
   // useState hook to store most follwed profiles in the state.
@@ -15,7 +16,7 @@ const PopularProfiles = () => {
   const { popularProfiles } = profileData;
   const currentUser = useCurrentUser();
 
-  // Fetch popularProfiles data on  mount using the useEffect hook.
+  // Fetch popularProfiles data on mount using the useEffect hook.
   useEffect(() => {
     const handleMount = async () => {
       try {
@@ -35,10 +36,16 @@ const PopularProfiles = () => {
 
   return (
     <Container className={appStyles.Post}>
-      <p>Most followed profiles.</p>
-      {popularProfiles.results.map((profile) => (
-        <p key={profile.id}>{profile.owner}</p>
-      ))}
+      {popularProfiles.results.length ? (
+        <>
+          <p>Most followed profiles.</p>
+          {popularProfiles.results.map((profile) => (
+            <p key={profile.id}>{profile.owner}</p>
+          ))}
+        </>
+      ) : (
+        <Asset spinner />
+      )}
     </Container>
   );
 };
