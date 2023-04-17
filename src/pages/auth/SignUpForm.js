@@ -4,6 +4,7 @@ import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { Form, Button, Col, Container, Alert } from "react-bootstrap";
 import axios from "axios";
+import { useRedirect } from "../../hooks/useRedirect";
 
 const SignUpForm = () => {
   /* 
@@ -18,6 +19,8 @@ const SignUpForm = () => {
     password2: "",
   });
   const { username, password1, password2 } = signUpData;
+  // Redirect users away from this page if they are already logged in.
+  useRedirect("loggedIn");
 
   /*
   Store all the erros using useState() to be display to the users. 

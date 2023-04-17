@@ -12,10 +12,12 @@ import Asset from "../../components/Asset";
 import { useHistory } from "react-router-dom";
 import { Alert, Image } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
+import { useRedirect } from "../../hooks/useRedirect";
 
 function PostCreateForm() {
   const [errors, setErrors] = useState({});
-
+  // Redirect users away from this page if they are already logged out.
+  useRedirect("loggedOut");
   /* 
     Store the values for inputs on Post Create Form using useState()
     Destructure the useState hook with:

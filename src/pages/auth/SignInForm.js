@@ -9,6 +9,7 @@ import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import axios from "axios";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
+import { useRedirect } from "../../hooks/useRedirect";
 
 function SignInForm() {
   /*
@@ -16,6 +17,8 @@ function SignInForm() {
   Set the setCurrentUser variable to handleSubmit.
   */
   const setCurrentUser = useSetCurrentUser();
+  // Redirect users away from this page if they are already logged in.
+  useRedirect("loggedIn");
 
   /* 
     Store the values for inputs on Sign in Form using useState()
@@ -62,7 +65,7 @@ function SignInForm() {
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       setCurrentUser(data.user);
-      history.push("/");
+      history.goBack();
     } catch (err) {
       setErrors(err.response?.data);
     }
