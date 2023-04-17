@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Container, Form, Modal } from "react-bootstrap";
+import { Alert, Button, Container, Form, Modal } from "react-bootstrap";
 import styles from "../../styles/PostCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { useHistory } from "react-router-dom";
@@ -17,6 +17,9 @@ const ContactForm = () => {
     content: "",
   });
   const { reason_contact, content } = contactData;
+
+  // Handle errors
+  const [errors, setErrors] = useState({});
 
   const history = useHistory();
 
@@ -52,6 +55,9 @@ const ContactForm = () => {
       history.goBack();
     } catch (err) {
       console.log(err);
+      if (err.response?.status !== 401) {
+        setErrors(err.response?.data);
+      }
     }
   };
   const textFields = (
@@ -65,7 +71,11 @@ const ContactForm = () => {
           onChange={handleChange}
         />
       </Form.Group>
-
+      {errors?.reason_contact?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Form.Group>
         <Form.Label>Details:</Form.Label>
         <Form.Control
@@ -76,8 +86,14 @@ const ContactForm = () => {
           onChange={handleChange}
         />
       </Form.Group>
-
-      <Button className={btnStyles.Button}>Cancel</Button>
+      {errors?.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+      <Button className={btnStyles.Button} onClick={() => history.goBack()}>
+        Cancel
+      </Button>
       <Button className={btnStyles.Button} type="submit">
         Send
       </Button>
