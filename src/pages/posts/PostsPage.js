@@ -92,11 +92,12 @@ function PostsPage({ message, filter = "" }) {
         </Badge>
 
         {/* Text search bar filters and keywords */}
-        <i className={`fas fa-search ${styles.SearchIcon}`} />
+
         <Form
           className={styles.SearchBar}
           onSubmit={(event) => event.preventDefault()}
         >
+          <i className={`fas fa-search ${styles.SearchIcon}`} />
           <Form.Control
             value={query}
             onChange={(event) => setQuery(event.target.value)}
