@@ -19,10 +19,29 @@ const ContactForm = () => {
 
   const history = useHistory();
 
+  const textFields = (
+    <div className="text-center">
+      <Form.Group>
+        <Form.Label>Please describe the reason for contacting us:</Form.Label>
+        <Form.Control type="text" name="reason" />
+      </Form.Group>
+
+      <Form.Group>
+        <Form.Label>Details:</Form.Label>
+        <Form.Control as="textarea" rows={5} name="content" />
+      </Form.Group>
+
+      <Button className={btnStyles.Button}>Cancel</Button>
+      <Button className={btnStyles.Button} type="submit">
+        Send
+      </Button>
+    </div>
+  );
+
   return (
     <Container>
       <Form>
-        <Container className={styles.Container}>TEXT FIELDS</Container>
+        <Container className={styles.Container}>{textFields}</Container>
       </Form>
       <Modal>
         <Modal.Header>
