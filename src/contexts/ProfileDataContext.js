@@ -96,7 +96,9 @@ export const ProfileDataProvider = ({ children }) => {
   // Add SetProfileDataContext.Provider and expose the setProfileData value.
   return (
     <ProfileDataContext.Provider value={profileData}>
-      <SetProfileDataContext.Provider value={{ setProfileData, handleFollow }}>
+      <SetProfileDataContext.Provider
+        value={{ setProfileData, handleFollow, handleUnfollow }}
+      >
         {children}
       </SetProfileDataContext.Provider>
     </ProfileDataContext.Provider>

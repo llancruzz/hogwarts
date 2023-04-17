@@ -26,8 +26,8 @@ function ProfilePage() {
   // Extract the id from the URL by useParams() to know which profile to fetch.
   const { id } = useParams();
   // Define function to updtade the pageProfile data calling useSetProfileData()
-  // Call handle follow function
-  const { setProfileData, handleFollow } = useSetProfileData();
+  // Call handle follow and unfollow function
+  const { setProfileData, handleFollow, handleUnfollow } = useSetProfileData();
   // Access the pageProfile destructuring and call useProfileData()
   const { pageProfile } = useProfileData();
   // Access a single profile object from the results array
@@ -93,7 +93,10 @@ function ProfilePage() {
           {currentUser &&
             !is_owner &&
             (profile?.following_id ? (
-              <Button className={`${btnStyles.Button}`} onClick={() => {}}>
+              <Button
+                className={`${btnStyles.Button}`}
+                onClick={() => handleUnfollow(profile)}
+              >
                 unfollow
               </Button>
             ) : (
