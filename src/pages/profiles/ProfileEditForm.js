@@ -25,7 +25,7 @@ const ProfileEditForm = () => {
   */
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
-  // Get id of the post that user wants to edit.
+  // Get id of the profile that user wants to edit.
   const { id } = useParams();
   // Call the useHistory hook to redirect to the user's profile page.
   const history = useHistory();
@@ -43,7 +43,7 @@ const ProfileEditForm = () => {
   /*
   Create async function and useEffect to fetch the profile id on mount.
   Make request to the API.
-  Allow only owner edit its posts.
+  Allow only owner edit its profile.
   */
   useEffect(() => {
     const handleMount = async () => {
