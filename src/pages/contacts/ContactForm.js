@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Alert, Button, Container, Form, Modal } from "react-bootstrap";
+import { Alert, Button, Container, Form } from "react-bootstrap";
 import styles from "../../styles/PostCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
+import logo from "../../assets/logo.png";
+import stylesImage from "../../styles/Image.module.css";
 
 const ContactForm = () => {
   /* 
@@ -105,16 +107,9 @@ const ContactForm = () => {
       <Form onSubmit={handleSubmit}>
         <Container className={styles.Container}>{textFields}</Container>
       </Form>
-      <Modal>
-        <Modal.Header closeButton>
-          <Modal.Title>Confirmed</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Thank you for your feedback!</Modal.Body>
-        <Modal.Footer>
-          <Button className={btnStyles.Button}>Cancel</Button>
-          <Button className={btnStyles.Button}>Confirm</Button>
-        </Modal.Footer>
-      </Modal>
+      <div className={stylesImage.ImageContainer}>
+        <img src={logo} className={stylesImage.ImageResponsive} alt="logo" />
+      </div>
     </Container>
   );
 };
