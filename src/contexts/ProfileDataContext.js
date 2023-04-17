@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { useCurrentUser } from "./CurrentUserContext";
 import { axiosReq, axiosRes } from "../api/axiosDefaults";
-import { followHelper } from "../utils/utils";
+import { followHelper, unfollowHelper } from "../utils/utils";
 
 /* 
 useContext()provides a way to pass through the component tree without having to pass props down manually at every level.
@@ -54,9 +54,7 @@ export const ProfileDataProvider = ({ children }) => {
   // Handle function to allow user to unfollow others profiles.
   const handleUnfollow = async (clickedProfile) => {
     try {
-      const { data } = await axiosRes.delete(
-        `/followers/${clickedProfile.following_id}/`
-      );
+      await axiosRes.delete(`/followers/${clickedProfile.following_id}/`);
       setProfileData((prevState) => ({
         ...prevState,
         pageProfile: {
