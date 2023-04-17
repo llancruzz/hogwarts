@@ -7,7 +7,7 @@ export const useRedirect = (userAuthStatus) => {
 
   /*
   Create async function and useEffect to fetch the token refresh on mount.
-  Make request to the API. DEfault axios token/refresh
+  Make request to the API. Default axios token/refresh
   Redirect pages if the user is logged in and out to home page.
   */
   useEffect(() => {
