@@ -51,6 +51,31 @@ export const ProfileDataProvider = ({ children }) => {
     }
   };
 
+  // Handle function to allow user to unfollow others profiles.
+  const handleUnfollow = async (clickedProfile) => {
+    try {
+      const { data } = await axiosRes.delete(
+        `/followers/${clickedProfile.following_id}/`
+      );
+      setProfileData((prevState) => ({
+        ...prevState,
+        pageProfile: {
+          results: prevState.pageProfile.results.map((profile) =>
+            unfollowHelper(profile, clickedProfile)
+          ),
+        },
+        popularProfiles: {
+          ...prevState.popularProfiles,
+          results: prevState.popularProfiles.results.map((profile) =>
+            unfollowHelper(profile, clickedProfile)
+          ),
+        },
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   // Fetch popularProfiles data on mount using the useEffect hook.
   useEffect(() => {
     const handleMount = async () => {
