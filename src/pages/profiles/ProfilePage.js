@@ -26,7 +26,8 @@ function ProfilePage() {
   // Extract the id from the URL by useParams() to know which profile to fetch.
   const { id } = useParams();
   // Define function to updtade the pageProfile data calling useSetProfileData()
-  const setProfileData = useSetProfileData();
+  // Call handle follow function
+  const { setProfileData, handleFollow } = useSetProfileData();
   // Access the pageProfile destructuring and call useProfileData()
   const { pageProfile } = useProfileData();
   // Access a single profile object from the results array
@@ -96,7 +97,10 @@ function ProfilePage() {
                 unfollow
               </Button>
             ) : (
-              <Button className={`${btnStyles.Button}`} onClick={() => {}}>
+              <Button
+                className={`${btnStyles.Button}`}
+                onClick={() => handleFollow(profile)}
+              >
                 follow
               </Button>
             ))}

@@ -5,6 +5,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import ProfilePicture from "../../components/ProfilePicture";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import { useSetProfileData } from "../../contexts/ProfileDataContext";
 
 const Profile = (props) => {
   // Access the data within the profile obj destructuring data.
@@ -14,6 +15,9 @@ const Profile = (props) => {
   // Check if its username is the same as the profile owner's.
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+
+  // Access the handle follow function call useSetprofileData().
+  const { handleFollow } = useSetProfileData();
 
   return (
     <div
@@ -36,7 +40,10 @@ const Profile = (props) => {
               unfollow
             </Button>
           ) : (
-            <Button className={btnStyles.Button} onClick={() => {}}>
+            <Button
+              className={btnStyles.Button}
+              onClick={() => handleFollow(profile)}
+            >
               follow
             </Button>
           ))}

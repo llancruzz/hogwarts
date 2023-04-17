@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { useCurrentUser } from "./CurrentUserContext";
-import { axiosReq } from "../api/axiosDefaults";
+import { axiosReq, axiosRes } from "../api/axiosDefaults";
 
 /* 
 useContext()provides a way to pass through the component tree without having to pass props down manually at every level.
@@ -24,6 +24,17 @@ export const ProfileDataProvider = ({ children }) => {
 
   const currentUser = useCurrentUser;
 
+  // Handle function to allow user to follow others profiles.
+  const handleFollow = async (clickedProfile) => {
+    try {
+      const { data } = await axiosRes.post("/followers/", {
+        followed: clickedProfile.id,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   // Fetch popularProfiles data on mount using the useEffect hook.
   useEffect(() => {
     const handleMount = async () => {
@@ -46,7 +57,7 @@ export const ProfileDataProvider = ({ children }) => {
   // Add SetProfileDataContext.Provider and expose the setProfileData value.
   return (
     <ProfileDataContext.Provider value={profileData}>
-      <SetProfileDataContext.Provider value={setProfileData}>
+      <SetProfileDataContext.Provider value={{ setProfileData, handleFollow }}>
         {children}
       </SetProfileDataContext.Provider>
     </ProfileDataContext.Provider>
