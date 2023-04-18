@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Alert, Button, Container, Form } from "react-bootstrap";
 import styles from "../../styles/PostCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -23,7 +23,24 @@ const ContactForm = () => {
   // Handle errors
   const [errors, setErrors] = useState({});
 
+  // Display alert message
+  const [showAlert, setShowAlert] = useState(false);
+
   const history = useHistory();
+
+  // Create a timer to show alert and close it.
+  useEffect(() => {
+    if (showAlert) {
+      const timer = setTimeout(() => {
+        setShowAlert(false);
+      }, 9000);
+      return () => clearTimeout(timer);
+    }
+  }, [showAlert]);
+
+  const handleButtonSend = () => {
+    setShowAlert(true);
+  };
 
   /*
   Handle function to handle the inputs field's state changes.
@@ -54,7 +71,7 @@ const ContactForm = () => {
 
     try {
       await axiosReq.post("/contacts/", formData);
-      history.goBack();
+      history.push("/contact/create");
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -96,7 +113,11 @@ const ContactForm = () => {
       <Button className={btnStyles.Button} onClick={() => history.goBack()}>
         Cancel
       </Button>
-      <Button className={btnStyles.Button} type="submit">
+      <Button
+        className={btnStyles.Button}
+        type="submit"
+        onClick={handleButtonSend}
+      >
         Send
       </Button>
     </div>
@@ -104,6 +125,11 @@ const ContactForm = () => {
 
   return (
     <Container>
+      <Alert show={showAlert} className="">
+        <Alert.Heading>Thank you for getting in touch!</Alert.Heading>
+        <p>We appreciate you contacting us. Have a great day!</p>
+        <hr />
+      </Alert>
       <Form onSubmit={handleSubmit}>
         <Container className={styles.Container}>{textFields}</Container>
       </Form>
