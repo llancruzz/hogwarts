@@ -15,6 +15,7 @@ import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ContactForm from "./pages/contacts/ContactForm";
+import Houses from "./pages/houses/Houses";
 
 function App() {
   /*
@@ -81,6 +82,7 @@ function App() {
             render={() => <UserPasswordForm />}
           />
           <Route exact path="/contact/create" render={() => <ContactForm />} />
+          <Route exact path="/houses" render={() => <Houses />} />
           <Route render={() => <p>Page Not Fond!</p>} />
         </Switch>
       </Container>

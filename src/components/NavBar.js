@@ -67,6 +67,14 @@ const NavBar = () => {
         exact
         className={styles.NavLink}
         activeClassName={styles.Active}
+        to="/houses"
+      >
+        <i className="fa-brands fa-fort-awesome"></i>House
+      </NavLink>
+      <NavLink
+        exact
+        className={styles.NavLink}
+        activeClassName={styles.Active}
         to="/feed"
       >
         <i className="fa-solid fa-book-open"></i>Feed
@@ -130,6 +138,7 @@ const NavBar = () => {
       className={styles.NavBar}
       fixed="top"
       expand="md"
+      variant="light"
     >
       <Container>
         <NavLink to="/">
@@ -145,14 +154,6 @@ const NavBar = () => {
         />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-left">
-            <NavLink
-              exact
-              className={styles.NavLink}
-              activeClassName={styles.Active}
-              to="/"
-            >
-              <i className="fa-brands fa-fort-awesome"></i>Home
-            </NavLink>
             {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
         </Navbar.Collapse>
