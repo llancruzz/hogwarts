@@ -10,6 +10,7 @@ import {
 import ProfilePicture from "./ProfilePicture";
 import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
+import { removeTokenTimestamp } from "../utils/utils";
 
 const NavBar = () => {
   // Call custom useCurrentUser hook to be able to display icons.
@@ -30,6 +31,7 @@ const NavBar = () => {
     try {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
+      removeTokenTimestamp();
     } catch (err) {
       console.log(err);
     }

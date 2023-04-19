@@ -1,3 +1,4 @@
+import jwtDecode from "jwt-decode";
 import { axiosReq } from "../api/axiosDefaults";
 
 /*
@@ -49,4 +50,18 @@ export const unfollowHelper = (profile, clickedProfile) => {
       { ...profile, following_count: profile.following_count - 1 }
     : // This is not the profile the user clicled on or the profile the user owns, return it unchanged.
       profile;
+};
+
+// Set a token timestamp in the browser storage.
+export const setTokenTimestamp = (data) => {
+  const refreshTokenTimestamp = jwtDecode(data?.refresh_token).exp;
+  localStorage.setItem("refreshTokenTimestamp", refreshTokenTimestamp);
+};
+// Return a boolean value that will tell us if we should refresh the users token or not.
+export const shouldRefreshToken = () => {
+  return !!localStorage.getItem("refreshTokenTimestamp");
+};
+// Remove the localStorage value if the user logs out or their refresh token has expired.
+export const removeTokenTimestamp = () => {
+  localStorage.removeItem("refreshTokenTimestamp");
 };
