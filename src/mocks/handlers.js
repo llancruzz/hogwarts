@@ -1,3 +1,5 @@
+import { rest } from "msw";
+
 // Mock response: url from axios default file.
 const baseURL = "https://hogwarts-hp.herokuapp.com/";
 
