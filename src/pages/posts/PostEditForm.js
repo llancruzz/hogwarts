@@ -48,7 +48,7 @@ function PostEditForm() {
           ? setPostData({ title, house, content, image })
           : history.push("/");
       } catch (err) {
-        console.log(err);
+      // console.log(err);
       }
     };
     handleMount();
@@ -116,7 +116,7 @@ function PostEditForm() {
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
-      console.log(err);
+    // console.log(err);
     }
   };
 

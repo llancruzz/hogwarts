@@ -14,6 +14,7 @@ import badgeStyles from "../../styles/PostsPage.module.css";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function PostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
@@ -21,6 +22,8 @@ function PostsPage({ message, filter = "" }) {
   const [house, setHouse] = useState(null);
   const { pathname } = useLocation();
   const [query, setQuery] = useState("");
+
+  const currentUser = useCurrentUser();
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -33,7 +36,7 @@ function PostsPage({ message, filter = "" }) {
         setPosts(data);
         setHasloaded(true);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
     setHasloaded(false);
@@ -43,7 +46,7 @@ function PostsPage({ message, filter = "" }) {
     return () => {
       clearTimeout(timer);
     };
-  }, [filter, query, house, pathname]);
+  }, [filter, query, house, pathname, currentUser]);
 
   return (
     <Row className="h-100">
