@@ -28,6 +28,7 @@
   -webkit-backdrop-filter: blur(10.2px);
   border: 1px solid rgb(211 216 222);
   text-align: -webkit-center;
+  margin-top: 5rem;
 }
 
 .Link span {

@@ -1,14 +1,14 @@
 .Button {
   font-size: 0.8rem;
-  border-color: #d3d8de;
-  color: black;
+  border-color: #455d6b23;
+  color: #05191b;
   text-transform: uppercase;
   font-weight: bold;
   padding: 4px 10px;
   margin-left: 10px;
   margin-right: 10px;
   min-width: 75px;
-  background: rgba(0, 0, 0, 0);
+  background: #455d6b23;
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10.2px);
@@ -17,11 +17,11 @@
 }
 
 .Button:hover {
-  color: black;
-  background: linear-gradient(315deg, #cacaca, #f0f0f0);
+  color: white;
+  background: linear-gradient(315deg, #455d6b, #f0f0f0);
   border-radius: 16px;
   border-color: transparent;
-  box-shadow: -4px -4px 8px #cacaca, 4px 4px 8px #f6f6f6;
+  box-shadow: -4px -4px 8px #455d6b23, 4px 4px 8px #f6f6f6;
   backdrop-filter: blur(10.2px);
   -webkit-backdrop-filter: blur(10.2px);
   border: 1px solid rgb(211 216 222);
@@ -29,10 +29,10 @@
 
 .Button:hover:active {
   color: black;
-  background: linear-gradient(315deg, #cacaca, #f0f0f0);
+  background: linear-gradient(315deg, #455d6b, #f0f0f0);
   border-radius: 16px;
   border-color: transparent;
-  box-shadow: -4px -4px 8px #cacaca, 4px 4px 8px #f6f6f6;
+  box-shadow: -4px -4px 8px #455d6b23, 4px 4px 8px #f6f6f6;
   backdrop-filter: blur(10.2px);
   -webkit-backdrop-filter: blur(10.2px);
   border: 1px solid rgb(211 216 222);
@@ -43,7 +43,7 @@
 }
 
 .Button:focus {
-  background-color: black;
+  background-color: #041925;
 }
 
 .Wide {

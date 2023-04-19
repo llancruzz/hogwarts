@@ -5,8 +5,6 @@ import gryffindor from "../../assets/gryffindor.webp";
 import slytherin from "../../assets/slytherin.webp";
 import ravenclaw from "../../assets/havenclaw.webp";
 import hufflepuff from "../../assets/hufflepuff.webp";
-import hogwartsAll from "../../assets/hogwartscrest.webp";
-import stylesImage from "../../styles/Image.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
 const Houses = () => {
@@ -21,9 +19,7 @@ const Houses = () => {
                 <Card.Title>Gryffindor</Card.Title>
               </Badge>
 
-              <Button className={btnStyles.Button}>
-                <Card.Link href="#">Description</Card.Link>
-              </Button>
+              <Button className={btnStyles.Button}>Description</Button>
               <Card.Text>Current Points</Card.Text>
             </Card.Body>
           </Card>
@@ -35,9 +31,7 @@ const Houses = () => {
               <Badge className={styles.Badge}>
                 <Card.Title>Slytherin</Card.Title>
               </Badge>
-              <Button className={btnStyles.Button}>
-                <Card.Link href="#">Description</Card.Link>
-              </Button>
+              <Button className={btnStyles.Button}>Description</Button>
               <Card.Text>Current Points</Card.Text>
             </Card.Body>
           </Card>
@@ -49,9 +43,7 @@ const Houses = () => {
               <Badge className={styles.Badge}>
                 <Card.Title>Ravenclaw</Card.Title>
               </Badge>
-              <Button className={btnStyles.Button}>
-                <Card.Link href="#">Description</Card.Link>
-              </Button>
+              <Button className={btnStyles.Button}>Description</Button>
               <Card.Text>Current Points</Card.Text>
             </Card.Body>
           </Card>
@@ -63,21 +55,12 @@ const Houses = () => {
               <Badge className={styles.Badge}>
                 <Card.Title>Hufflepuff</Card.Title>
               </Badge>
-              <Button className={btnStyles.Button}>
-                <Card.Link href="#">Description</Card.Link>
-              </Button>
+              <Button className={btnStyles.Button}>Description</Button>
               <Card.Text>Current Points</Card.Text>
             </Card.Body>
           </Card>
         </Col>
       </Row>
-      <div className={stylesImage.ImageContainer}>
-        <img
-          src={hogwartsAll}
-          className={stylesImage.ImageResponsive}
-          alt="hogwarts all houses"
-        />
-      </div>
     </Container>
   );
 };

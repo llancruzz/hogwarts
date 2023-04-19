@@ -124,8 +124,8 @@ const ContactForm = () => {
   );
 
   return (
-    <Container>
-      <Alert show={showAlert} className="">
+    <Container className="mt-5">
+      <Alert show={showAlert}>
         <Alert.Heading>Thank you for getting in touch!</Alert.Heading>
         <p>We appreciate you contacting us. Have a great day!</p>
         <hr />
