@@ -148,23 +148,20 @@ Sign Up Page:
 
 #### Color Scheme
 
-Minimal color has been used throughout the site taking inspiration from other property websites to keep the content clear and minimize distraction.
+The site's color scheme was intentionally kept to a minimum to ensure clear focus, emphasize status information, and convey a professional aesthetic.
 
-The background surrounding content on larger viewports is a light grey used to make the content stand out.
+![colour schema](docs/hogwarts.png)
 
-Blue (rgb(14, 107, 168)) was chosen as the color of primary buttons due to its positive psychological association with Trust, Dependability and Security. These traits were deemed important to the sites brand as users are dealing with strangers and potentially large sums of money.
-
-![Primary Button Colour](docs/assets/button_colour.png)
 
 #### Typography
 
 Google fonts was used in this project with both fonts selected for their legibility and simplicity:
 
-1. Link the font used here
+1. [Link the font used here](https://fonts.google.com/specimen/DM+Sans)
 
 #### Images and Iconography
 
-The site logo was sourced from [freepik](https://www.freepik.com). Please refer to the [Credits section](#credits) for more detail.
+The site logo was sourced from [PNGEGG](https://www.pngegg.com/). Please refer to the [Credits section](#credits) for more detail.
 
 ## Features
 
@@ -345,7 +342,7 @@ You should then update the `CLIENT_ORIGIN` config variable in your deployed vers
 
 ### Media
 
-- Property Images for demo property content and user avatars were taken from [unsplash](https://unsplash.com/).
+- Post Images for demo post content and users avatars were taken from [unsplash](https://unsplash.com/) and [iStock](https://www.istockphoto.com/).
 
 ### Acknowledgments
 
