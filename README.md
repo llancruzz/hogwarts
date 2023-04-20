@@ -93,17 +93,58 @@ Pull requests were linked with a user story when they contributed to completion 
 
 #### Wireframes
 
-Wireframes were created to visualize the layout of the site and as a reference when translating those designs to the final product. Care was taken at this stage to consider a layout that would work well across a diverse range of viewports. Desktop and Mobile wireframes can be viewed using the links below:
+Wireframes were created to visualize the layout of the site and as a reference when translating those designs to the final product. Care was taken at this stage to consider a layout that would work well across a diverse range of viewports. Desktop and Mobile wireframes can be viewed using the button below:
 
-- [Wireframes for Home Page Authorized](#)
-- [Wireframes for Home Page Unauthorized](#)
-- [Wireframes for Create Post Page](#)
-- [Wireframes for Comment on a Post Page](#)
-- [Wireframes for Profile Page](#)
-- [Wireframes for Contact Page](#)
-- [Wireframes for House Profile](#)
-- [Wireframes for Sign In Page](#)
-- [Wireframes for Sign Out Page](#)
+<details><summary>Wireframes for Home Page Authorized</summary>
+Home Page Authorized:
+
+![home page authorised](docs/home-page-authorized.png)
+</details>
+<details><summary>Wireframes for Home Page Unauthorized</summary>
+Home Page Unauthorized:
+
+![home page unauthorised](docs/home-page-unauthorized.png)
+</details>
+<details><summary>Wireframes for Create Post Page</summary>
+Create Post Page Authorized:
+
+![create post page authorized](docs/create-page-authorized.png)
+</details>
+<details><summary>Wireframes for Comment on a Post Page</summary>
+Comment on a Post Page:
+
+![comment on a post page](docs/comment-post-page-authorized.png)
+</details>
+<details><summary>Wireframes for Profile Page</summary>
+Profile Page Authorized: 3 Dots means:  EDIT | Profile | Username | Password
+
+![profile page](docs/profile-page-authorized.png)
+</details>
+<details><summary>Wireframes for Contact Page</summary>
+Contact Page Authorized:
+
+![Contact page](docs/contact-page-authorized.png)
+</details>
+<details><summary>Wireframes for House Profile</summary>
+House Profile Authorized:
+
+![house profile page](docs/house-profile-page.png)
+</details>
+<details><summary>Wireframes for Not Found / Not Results Page</summary>
+Not Found | Not Results Page:
+
+![not found not results page](docs/not-found-not-results-page.png)
+</details>
+<details><summary>Wireframes for Sign In Page</summary>
+Sign In Page:
+
+![sign in page](docs/signin-page.png)
+</details>
+<details><summary>Wireframes for Sign Out Page</summary>
+Sign Up Page:
+
+![sign up page](docs/signup-page.png)
+</details>
 
 #### Color Scheme
 
