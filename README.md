@@ -6,7 +6,7 @@ Only registered users can create, update, and delete posts.Registered users can 
 
 This is my 5th portfolio project developed as part of the [Code Institute Diploma in Full Stack Development](https://codeinstitute.net/ie/full-stack-software-development-diploma/). It was created to demonstrate skills acquired using the [Django REST Framework](https://www.django-rest-framework.org/) and [React](https://react.dev/) JavaScript library to develop the API and Frontend respectively.
 
-![Website Preview](#)
+![Website Preview](docs/responsive-web.png)
 
 ## Demo
 
@@ -32,17 +32,20 @@ This is my 5th portfolio project developed as part of the [Code Institute Diplom
   - [Navigation](#navigation)
   - [Register (Sign up) / Login](#register-sign-up--login)
   - [Post Creation / Edit Form](#post-creation--edit-form)
-  - [Post List View](#property-list-view)
-  - [Post Detail View](#property-detail-view)
-  - [Post Search Form](#property-search-form)
+  - [Post List View and Search Bar](#post-list-view-and-search-bar)
+  - [Post Detail View](#post-detail-view)
+  - [Comment List View](#comment-list-view)
+  - [Comment Detail View](#comment-detail-view)
   - [Feed](#feed)
   - [Liked](#liked)
-  - [Most Following Users](#most-following-users)
+  - [Most Followed Users](#most-following-users)
   - [Profile](#profile)
   - [Profile Edit Form](#profile-edit-form)
   - [Username and Password Edit Forms](#username-and-password-edit-forms)
   - [Contact](#contact)
   - [House Profile](#house-profile)
+  - [Icons](#icons)
+  - [Not Found and Results Page](#not-found-and-results-page)
   - [Components](#components)
     - [Components used in this application](#components-used-in-this-application)
   - [Future Features](#future-features)
@@ -171,9 +174,78 @@ The site logo was sourced from [PNGEGG](https://www.pngegg.com/). Please refer t
 - It contains the navigation bar, a list of posts, and the search bar so users can interact with site content straight away.
 - User Stories covered:
 
-![Home Page](#)
+![Home Page](docs/home-page-web.png)
 
 ### Navigation
+
+![Navigation Page](docs/navbar-page.png)
+
+### Register (Sign up) / Login
+
+![Resgister Sign up Page](docs/sign-up-page.png)
+![Register Sign in Page](docs/sign-in-page.png)
+
+### Post Creation / Edit Form
+
+![Post create Page](docs/create-post-page.png)
+
+### Post List View and Search Bar
+
+![Post list view search bar Page](docs/post-search-list-view.png)
+
+### Post Detail View
+
+![Post Detail Page](docs/edit-post-page.png)
+
+### Comment List View
+
+![Comment list Page](docs/comment-post-page.png)
+
+### Comment Detail View
+
+![Comment Detail Page](docs/edit-comment-post-page.png)
+
+### Feed
+
+![Feed Page](#)
+
+### Liked
+
+![Liked Page](#)
+
+### Most Followed Users
+
+![Most Followed Page](docs/most-followed-page.png)
+
+### Profile
+
+![Profile Page](docs/edit-page.png)
+
+### Profile Edit Form
+
+![Profile Edit Page](docs/edit-profile-page.png)
+
+### Username and Password Edit Forms
+
+![Username Page](docs/username-edit-page.png)
+![Password Page](docs/password-edit-page.png)
+
+### Contact
+
+![Contact Page](docs/contact-page.png)
+
+### House Profile
+
+![House Profile Page](#)
+
+### Icons
+
+![Icons Page](docs/icons.png)
+
+### Not Found and Results Page
+
+![not found page](docs/not-found.png)
+![not results page](docs/not-results.png)
 
 ### Components
 
