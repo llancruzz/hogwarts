@@ -207,11 +207,11 @@ The site logo was sourced from [PNGEGG](https://www.pngegg.com/). Please refer t
 
 ### Feed
 
-![Feed Page](#)
+![Feed Page](docs/feed.png)
 
 ### Liked
 
-![Liked Page](#)
+![Liked Page](docs/liked.png)
 
 ### Most Followed Users
 
