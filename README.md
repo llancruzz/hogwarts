@@ -2,7 +2,7 @@
 
 Hogwarts is a social media platform that has been created based on the beloved Harry Potter saga. The main objective of this platform is to enable users to view posts that are related to the saga. Users who have registered on the platform are able to list posts and access the content that is contained within them.
 
-Only registered users can create, update, and delete posts.Registered users can follow, like, and comment on posts.A user's profile can be viewed by other users and visitors.Profile update functionality is restricted to the profile owner.The CRUD functionality for Likes, Followers, Contacts and Comments is restricted to the respective user."
+Only registered users can create, update, and delete posts. Registered users can follow, like, and comment on posts. A user's profile can be viewed by other users and visitors. Profile update functionality is restricted to the profile owner. The CRUD functionality for Likes, Followers, Contacts and Comments is restricted to the respective user."
 
 This is my 5th portfolio project developed as part of the [Code Institute Diploma in Full Stack Development](https://codeinstitute.net/ie/full-stack-software-development-diploma/). It was created to demonstrate skills acquired using the [Django REST Framework](https://www.django-rest-framework.org/) and [React](https://react.dev/) JavaScript library to develop the API and Frontend respectively.
 
@@ -69,28 +69,28 @@ This is my 5th portfolio project developed as part of the [Code Institute Diplom
 
 ## User Experience (UX)
 
-The initial aims of the project, which formed the basis for user story creation, were to produce a web application that allows registered users to post their image, content and chose its house class of Hogwarts, and search for posts by other users for knowing each other. Key goals for the site were identified as below and used to construct user stories:
+The initial aims of the project, which formed the basis for user story creation, were to produce a web application that allows registered users to post their images, content and chose its house class of Hogwarts, and search for posts by other users for knowing each other. Key goals for the site were identified below and used to construct user stories:
 
 - Allow users to search for posts using a filter.
 - Allow posts to be liked for future review.
 - Allow popular sellers to be followed so new listings can be seen via a newsfeed.
 - Registered users can leave comments on posts.
-- Site Owners can create / edit / delete its own post.
-- Registered users can read and comment on aother user's posts.
-- Registered and unregistered users can contact the admin of the site for future issues on web application.
+- Site Owners can create/edit/delete their posts.
+- Registered users can read and comment on another user's posts.
+- Registered and unregistered users can contact the admin of the site for future issues on the web application.
 
 ### User Stories
 
-All User Stories can be viewed in the projects GitHub Repository and have been mapped to Epics on the projects [Kanban board](https://github.com/users/llancruzz/projects/10).
-Acceptance criteria for each user story can be viewed by opening each User Story on the projects Kanban Board (linked above) or from the table view [here](https://github.com/users/llancruzz/projects/10/views/10). Alternatively all User Stories can be found in a separate readme file [here](USERSTORIES.md).
+All User Stories can be viewed in the project GitHub Repository and have been mapped to Epics on the projects [Kanban board](https://github.com/users/llancruzz/projects/10).
+Acceptance criteria for each user story can be viewed by opening each User Story on the projects Kanban Board (linked above) or from the table view [here](https://github.com/users/llancruzz/projects/10/views/10). Alternatively, all User Stories can be found in a separate readme file [here](USERSTORIES.md).
 
 ### Agile Methodology
 
-An Agile Methodology was employed to manage the development of this project. GitHub Projects was used to create User Stories as Issues, each with acceptance criteria and tasks. User Stories were then grouped into Milestones to represent the Epics each belong to and assigned a priority using the MOSCOW prioritization technique.
+An Agile Methodology was employed to manage the development of this project. GitHub Projects was used to create User Stories as Issues, each with acceptance criteria and tasks. User Stories were then grouped into Milestones to represent the Epics each belongs to and assigned a priority using the MOSCOW prioritization technique.
 
-User Stories were then assigned to 1 of the 4 planned Sprints (or Iterations) to cover the main development phase of the project. The projects Kanban board can be viewed [here](https://github.com/users/llancruzz/projects/10).
+User Stories were then assigned to 1 of the 4 planned Sprints (or Iterations) to cover the main development phase of the project. The project's Kanban board can be viewed [here](https://github.com/users/llancruzz/projects/10).
 
-Pull requests were linked with a user story when they contributed to completion of the acceptance criteria.
+Pull requests were linked with a user story when they contributed to the completion of the acceptance criteria.
 
 ### Design
 
@@ -151,14 +151,14 @@ Sign Up Page:
 
 #### Color Scheme
 
-The site's color scheme was intentionally kept to a minimum to ensure clear focus, emphasize status information, and convey a professional aesthetic.
+The site's colour scheme was intentionally kept to a minimum to ensure clear focus, emphasize status information, and convey a professional aesthetic.
 
 ![colour schema](docs/hogwarts.png)
 
 
 #### Typography
 
-Google fonts was used in this project with both fonts selected for their legibility and simplicity:
+Google fonts were used in this project with both fonts selected for their legibility and simplicity:
 
 1. [Link the font used here](https://fonts.google.com/specimen/DM+Sans)
 
@@ -170,28 +170,28 @@ The site logo was sourced from [PNGEGG](https://www.pngegg.com/). Please refer t
 
 ### Home Page
 
-- The home page serves as the entrypoint for the site.
-- It contains the navigation bar, a list of posts,the most followed profiles and the search bar post so users can interact with site content straight away.
+- The home page serves as the entry point for the site.
+- It contains the navigation bar, a list of posts, the most followed profiles and the search bar post so users can interact with site content straight away.
 - User Stories: [#17](https://github.com/llancruzz/hogwarts/issues/17) | [#19](https://github.com/llancruzz/hogwarts/issues/19) | [#24](https://github.com/llancruzz/hogwarts/issues/24)
 
 ![Home Page](docs/home-page-web.png)
 
 ### Navigation
 
-- The navigation bar features on all pages of the site. It contains icons on each section of the web appplication.
-- It was designed to be responsive and displays different links to users based on authentication state.
-  - If a user is authenticated, they can see links to create a post listing, view liked (like) post, view their post feed (post listed by other users they have followed), a contact form, all the houses profiles and a link to their profile and the option to sign out.
-  - If a user is not authenticated, the can see links to login or register (sign up). They can also see home page, however they can not have all CRUD functionality.
-- When viewed on smaller viewport all options are listed in a hamburger menu on the left of the navbar.
+- The navigation bar features on all pages of the site. It contains icons on each section of the web application.
+- It was designed to be responsive and displays different links to users based on the authentication state.
+  - If a user is authenticated, they can see links to create a post listing, view liked (like) posts, view their post feed (posts listed by other users they have followed), a contact form, all the houses profiles and a link to their profile and the option to sign out.
+  - If a user is not authenticated, they can see links to log in or register (sign up). They can also see the home page, however, they can not have all CRUD functionality.
+- When viewed on a smaller viewport all options are listed in a hamburger menu on the left of the navbar.
 - User Stories: [#9](https://github.com/llancruzz/hogwarts/issues/9) | [#10](https://github.com/llancruzz/hogwarts/issues/10) | [#15](https://github.com/llancruzz/hogwarts/issues/15)
 
 ![Navigation Page](docs/navbar-page.png)
 
 ### Register (Sign up) / Login
 
-- Users are able to register for an account that enables them to create posts, as well as like, comment on, and follow the profiles of other users.
-- To ensure the accuracy of the chosen password, it is required that a unique username be provided along with it. Additionally, the password must be entered twice in order to minimize the possibility of any inadvertent errors.
-- Upon successful completion of the registration process, the user will be redirected to the login page, where they can utilize their newly created credentials to authenticate their account.
+- Users can register for an account that enables them to create posts, as well as like, comment on, and follow the profiles of other users.
+- To ensure the accuracy of the chosen password, it is required that a unique username be provided along with it. Additionally, the password must be entered twice to minimize the possibility of any inadvertent errors.
+- Upon completion of the register, the user will be redirected to the login page, where they can utilize their newly created credentials to authenticate their account.
 - User Stories: [#11](https://github.com/llancruzz/hogwarts/issues/11) | [#12](https://github.com/llancruzz/hogwarts/issues/12) | [#13](https://github.com/llancruzz/hogwarts/issues/13) | [#14](https://github.com/llancruzz/hogwarts/issues/14)
 
 ![Resgister Sign up Page](docs/sign-up-page.png)
@@ -201,8 +201,8 @@ The site logo was sourced from [PNGEGG](https://www.pngegg.com/). Please refer t
 
 - Registered users are granted access to create posts and share them with the world.
 - This form serves a dual purpose: it can be used both for creating a new post and for editing an existing one. an existing post.
-- Users registered are able to upload an image to represent their post listing, and choose from a options of categories to display their post. The form comprises a title and a content section as well.
-- In order to post their content, users must provide an image, a title, and the content itself.
+- Users registered can upload an image to represent their post listing and choose from options of categories to display their post. The form comprises a title and a content section as well.
+- To post their content, users must provide an image, a title, and the content itself.
 - User Stories : [#16](https://github.com/llancruzz/hogwarts/issues/16) | [#25](https://github.com/llancruzz/hogwarts/issues/25)
 
 ![Post create Page](docs/create-post-page.png)
@@ -225,48 +225,40 @@ The site logo was sourced from [PNGEGG](https://www.pngegg.com/). Please refer t
 
 ### Comment List View
 
-- Registered users are able to leave comments on individual posts, even on their own posts.
+- Registered users can leave comments on individual posts, even on their posts.
 - The comment list view form includes the user's avatar, username, and the date the comment was posted.
-- If a post has no comments, a message will be displayed, inviting users to leave the first comment on the post.
+- If a post has no comments, a message will be displayed, inviting users to leave the first comment on the post. 
 - User Stories: [#26](https://github.com/llancruzz/hogwarts/issues/26) | [#27](https://github.com/llancruzz/hogwarts/issues/27) | [#28](https://github.com/llancruzz/hogwarts/issues/28)
 
 ![Comment list Page](docs/comment-post-page.png)
 
 ### Comment Detail View
 
-- Registered users can edit their comments by making changes to the content of their previous comment.
+- Registered users can edit their comments by making changes to the content of their previous comments.
 - User Stories: [#29](https://github.com/llancruzz/hogwarts/issues/29) | [#30](https://github.com/llancruzz/hogwarts/issues/30)
 ![Comment Detail Page](docs/edit-comment-post-page.png)
 
 ### Feed
 
-<<<<<<< HEAD
-![Feed Page](docs/feed.png)
-
-### Liked
-
-![Liked Page](docs/liked.png)
-=======
-![feed](#)
+![feed](docs/feed.png)
 - By allowing users to follow other users, the website's Feed section will display posts exclusively from authors whom the user has chosen to follow.
 - User Stories: [#22](https://github.com/llancruzz/hogwarts/issues/22) | [#34](https://github.com/llancruzz/hogwarts/issues/34) | [#35](https://github.com/llancruzz/hogwarts/issues/35)
 
 ### Liked
 
-![liked](#)
-- Users have the ability to like posts they enjoy, which directly impacts the "Liked" section of the website, displaying only the posts that the user has previously liked.
+![liked](docs/liked.png)
+- Users can like posts they enjoy, which directly impacts the "Liked" section of the website, displaying only the posts that the user has previously liked.
 - User Stories: [#18](https://github.com/llancruzz/hogwarts/issues/18) | [#21](https://github.com/llancruzz/hogwarts/issues/21)
->>>>>>> refs/remotes/origin/main
 
 ### Most Followed Users
-- Users can easily view the most followed profiles, which includes the avatar and username of each user. 
-- The component also display follow and unfollow buttons.
+- Users can easily view the most followed profiles, which include the avatar and username of each user. 
+- The component also displays follow and unfollow buttons.
 - User Stories: [#22](https://github.com/llancruzz/hogwarts/issues/22) | [#32](https://github.com/llancruzz/hogwarts/issues/32)
 
 ![Most Followed Page](docs/most-followed-page.png)
 
 ### Profile
-- When users visit this section, they can view their personal statistics, such as:
+- When users visit this section, they can view their statistics, such as:
   -  The number of posts they have created.
   -  The number of followers they have.
   -  The number of people they follow.
@@ -278,14 +270,14 @@ The site logo was sourced from [PNGEGG](https://www.pngegg.com/). Please refer t
 
 ### Profile Edit Form
 
-- Registered users have the ability to edit their profile by updating their profile picture and bio.
+- Registered users can edit their profile by updating their profile picture and bio.
 - User Stories: [#36](https://github.com/llancruzz/hogwarts/issues/36)
 
 ![Profile Edit Page](docs/edit-profile-page.png)
 
 ### Username and Password Edit Forms
 
-- Registered users have the ability to update their username and password by editing their account information.
+- Registered users can update their username and password by editing their account information.
 - User Stories: [#37](https://github.com/llancruzz/hogwarts/issues/37)
 
 ![Username Page](docs/username-edit-page.png)
@@ -319,34 +311,34 @@ The site logo was sourced from [PNGEGG](https://www.pngegg.com/). Please refer t
 
 - All page not found displays a message:
   - Sorry, the page you're looking for doesn't exist
-- All page with no results of posts, feed, likes displays a message:
+- All page with no results of posts, feed, or likes displays a message:
   - No results found. Adjust the search keyword or like a post.
   - No results found. Adjust the search keyword or follow a user.
-  - No results found, user hasn't posted yet.
+  - No results found, the user hasn't posted yet.
 
 ![not found page](docs/not-found.png)
 ![not results page](docs/not-results.png)
 
 ### Components
 
-Components in ReactJS are independent and reusable blocks of code that simplify developments by allowing a developer to break a user interface into elements that can reused across one or multiple applications.
+Components in ReactJS are independent and reusable blocks of code that simplify developments by allowing a developer to break a user interface into elements that can be reused across one or multiple applications.
 
-For more details about Component, check my repository that I have created throughout Code Institute clicking in:
+For more details about Component, check the repository that I have created throughout Code Institute by clicking in:
 [Components](https://github.com/llancruzz/react-components)
 
-A number of components were created during the development of this project and are highlighted below. Benefits common to all components are:
+Several components-entse created during the development of this project and are highlighted below. Benefits common to all components are 
 
-- Ease of development by consolidating code into a single re-usable component that could be used in different parts of the application and debugged by modifying code in a single location.
+- Ease of development by consolidating code into a single re-usable component that could be used in different parts of the application and debugging by modifying code in a single location.
 - Allowed for consistent user experience across pages without code duplication and the complexities of managing duplicated code.
 
 #### Components used in this application
 
 - Asset
-  - Used to display a loading spinner, upload image (planned to be used when multiple image uploads are introduced to the site in future versions) and a message when search filters return no results.
-  - UX (user experience) is improved by the loading spinner as users are notified when content is being fetched by the application, rather then being presented with a blank or partially complete page while data is loaded.
+  - Used to display a loading spinner, upload image (planned to be used when multiple image uploads are introduced to the site in future versions) and a message when search filters returned no results.
+  - UX (user experience) is improved by the loading spinner as users are notified when content is being fetched by the application, rather than being presented with a blank or partially complete page while data is loaded.
   - UX is improved by the feedback provided to users when a search returns no results as this provides feedback and prompts them to adjust their search criteria.
 
-- Profile Pciture
+- Profile Picture
   - Used to display the user avatar in different variations throughout the site (based on use and viewport size).
   - UX experience is improved as users can quickly identify the author of posts and their authentication state.
 
@@ -355,8 +347,8 @@ A number of components were created during the development of this project and a
   - UX was improved by presenting a consistent menu throughout the site while allowing for different functionality by passing handler functions as arguments (props) to the component.
 
 - NavBar
-  - The navigation bar appears on every page and contributes to an improved user experience by providing users to access the majority of site functionality in a consistent way.
-  - The Navbar component displays different links and layouts based on authentication state and as such contains a lot of conditional logic. To not have to duplicate this code across each page and have a reusable component saved time and effort during the development cycle.
+  - The navigation bar appears on every page and contributes to an improved user experience by providing users with to access the majority of site functionality consistently.
+  - The Navbar component displays different links and layouts based on the authentication state and as such contains a lot of conditional logic. Not having to duplicate this code across each page and having a reusable component saved time and effort during the development cycle.
 
 - NotFound
   - This component is displayed when a user navigates to a resource that doesn't exist.
@@ -376,7 +368,7 @@ Separate testing documentation can be viewed [here](TESTING.md).
 - Lorem Ipsum
 
 #### Remaining Bugs
-- To utilize the Hogwarts web app on iOS devices, Safari on MacOS, Samsung Internet on Samsung devices, and potentially other platforms, users must disable their anti-tracking features such as 'Prevent Cross Site Tracking' on Apple devices or 'Smart Anti-Tracking' on Samsung devices. This is necessary because the web app's Django Rest Framework API and React front-end are hosted on separate domains through Heroku, thereby triggering the anti-tracking mechanisms which obstruct cross-domain requests from the front-end to the API. Unfortunately, it appears that there is no solution available other than hosting the API and front-end on the same domain. (reference - https://stackoverflow.com/questions/56972162/is-there-a-workaround-for-safari-ios-prevent-cross-site-tracking-option-when).
+- To utilize the Hogwarts web app on iOS devices, Safari on MacOS, Samsung Internet on Samsung devices, and potentially other platforms, users must disable their anti-tracking features such as 'Prevent Cross-Site Tracking' on Apple devices or 'Smart Anti-Tracking' on Samsung devices. This is necessary because the web app's Django Rest Framework API and React front-end are hosted on separate domains through Heroku, thereby triggering the anti-tracking mechanisms which obstruct cross-domain requests from the front end to the API. Unfortunately, it appears that there is no solution available other than hosting the API and front end on the same domain. (reference - https://stackoverflow.com/questions/56972162/is-there-a-workaround-for-safari-ios-prevent-cross-site-tracking-option-when).
 
 No known remaining bugs.
 
@@ -409,7 +401,7 @@ No known remaining bugs.
   - Git was used for version control, using the terminal to commit to Git and
     Push to GitHub.
 - [GitHub:](https://github.com/)
-  - GitHub is used to store the projects code after being pushed from Git.
+  - GitHub is used to store the project's code after being pushed from Git.
 - The following modules were installed or enabled in [Gitpod](https://code.visualstudio.com/) to assist with formatting and code linting:
   - [ESLint](https://eslint.org/) - Code Linter.
   - [Prettier](https://prettier.io/) - Code Formatting.
@@ -425,7 +417,7 @@ repository by using the following steps...
 
 1. Log in to GitHub and locate the [GitHub
    Repository](https://github.com/ianmeigh/property-direct-backend)
-1. At the top of the Repository (not top of page) just above the "Settings"
+1. At the top of the Repository (not the top of page) just above the "Settings"
    Button on the menu, locate the "Fork" Button.
 1. Click the button (not the number to the right) and you should now have a copy
    of the original repository in your GitHub account.
@@ -478,25 +470,25 @@ repository by using the following steps...
 6. Select 'GitHub' from the 'Deployment method' section and you will be prompted to 'Connect to GitHub'.
 7. Once connected to your GitHub account you will be able to search for your repository which contains the forked 'Support-Hub' repository.
 8. Once the repository is found click 'Connect'.
-9. At the bottom of the page find the section named 'Manual deploy', select the 'main' branch in the drop down and click the 'Deploy' button.
+9. At the bottom of the page find the section named 'Manual deploy', select the 'main' branch in the drop-down and click the 'Deploy' button.
 10. Once deployment is complete, click the 'View' button to load the URL of the deployed application.
 
 ### Linking with the API/backend
 
-You will need to ensure you have set the `axios.defaults.baseURL` in the `api/axiosDefaults.jsx` file to the url of your deployed version of th API.
+You will need to ensure ydrop-downet the `axios.defaults.baseURL` in the `api/axiosDefaults.jsx` file to the URL of your deployed version of the API.
 You should then update the `CLIENT_ORIGIN` config variable in your deployed version of the API to ensure you will be able to make authenticated requests to this API.
 
 ## Credits
 
 ### Code
 
-- The Moments tutorial produced by Code institute is credited throughout this project as it was used to create the foundations on which I built upon to create my project.
+- The Moments tutorial produced by Code Institute is credited throughout this project as it was used to create the foundations upon which I built upon to create my project.
 - [React documentation](https://reactjs.org/docs/getting-started.html) - Was used throughout development to gain a better understanding of Hooks.
 - [React Bootstrap documentation and examples](https://react-bootstrap.github.io/components/alerts) - Used as a reference when building responsive component layouts.
 
 ### Media
 
-- Post Images for demo post content and users avatars were taken from [unsplash](https://unsplash.com/) and [iStock](https://www.istockphoto.com/).
+- Post Images for demo post content and users' avatars were taken from [unsplash](https://unsplash.com/) and [iStock](https://www.istockphoto.com/).
 
 ### Acknowledgments
 
