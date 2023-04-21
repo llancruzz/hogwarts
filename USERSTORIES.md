@@ -8,7 +8,7 @@
 ### Epic: Authentication:
 1. **Authentication - Sign up:** As a user I can create a new account so that I can access all the features for signed up users. [#11](https://github.com/llancruzz/hogwarts/issues/11)
 1.  **Authentication - Sign in:** As a user I can sign in to the app so that I can access functionality for logged in users. [#12](https://github.com/llancruzz/hogwarts/issues/12)
-1. **Authentication** - Logged in Status:** As a user I can tell if I am logged in or not so that I can log in if I need to. [#13](https://github.com/llancruzz/hogwarts/issues/13)
+1. **Authentication - Logged in Status:** As a user I can tell if I am logged in or not so that I can log in if I need to. [#13](https://github.com/llancruzz/hogwarts/issues/13)
 1. **Authentication - Refreshing access tokens:** As a user I can maintain my logged-in status until I choose to log out so that my user experience is not compromised. [#14](https://github.com/llancruzz/hogwarts/issues/14)
 
 ### Epic: Adding & Liking Posts:
@@ -46,3 +46,5 @@
 
 ### Epic: House Profile:
 1. **House Profile:** As a logged-in user, I can see and read about Hogwarts House classes, so that I can gain more knowledge about the history of each house in the world of witchcraft and wizardry at Hogwarts. [#40](https://github.com/llancruzz/hogwarts/issues/40)
+
+Return to [README.md](README.md) :book:
