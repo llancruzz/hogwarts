@@ -38,7 +38,7 @@ This is my 5th portfolio project developed as part of the [Code Institute Diplom
   - [Comment Detail View](#comment-detail-view)
   - [Feed](#feed)
   - [Liked](#liked)
-  - [Most Followed Users](#most-following-users)
+  - [Most Followed Users](#most-followed-users)
   - [Profile](#profile)
   - [Profile Edit Form](#profile-edit-form)
   - [Username and Password Edit Forms](#username-and-password-edit-forms)
@@ -143,7 +143,7 @@ Sign In Page:
 
 ![sign in page](docs/signin-page.png)
 </details>
-<details><summary>Wireframes for Sign Out Page</summary>
+<details><summary>Wireframes for Sign Up Page</summary>
 Sign Up Page:
 
 ![sign up page](docs/signup-page.png)
@@ -171,78 +171,150 @@ The site logo was sourced from [PNGEGG](https://www.pngegg.com/). Please refer t
 ### Home Page
 
 - The home page serves as the entrypoint for the site.
-- It contains the navigation bar, a list of posts, and the search bar so users can interact with site content straight away.
-- User Stories covered:
+- It contains the navigation bar, a list of posts,the most followed profiles and the search bar post so users can interact with site content straight away.
+- User Stories: [#17](https://github.com/llancruzz/hogwarts/issues/17) | [#19](https://github.com/llancruzz/hogwarts/issues/19) | [#24](https://github.com/llancruzz/hogwarts/issues/24)
 
 ![Home Page](docs/home-page-web.png)
 
 ### Navigation
 
+- The navigation bar features on all pages of the site. It contains icons on each section of the web appplication.
+- It was designed to be responsive and displays different links to users based on authentication state.
+  - If a user is authenticated, they can see links to create a post listing, view liked (like) post, view their post feed (post listed by other users they have followed), a contact form, all the houses profiles and a link to their profile and the option to sign out.
+  - If a user is not authenticated, the can see links to login or register (sign up). They can also see home page, however they can not have all CRUD functionality.
+- When viewed on smaller viewport all options are listed in a hamburger menu on the left of the navbar.
+- User Stories: [#9](https://github.com/llancruzz/hogwarts/issues/9) | [#10](https://github.com/llancruzz/hogwarts/issues/10) | [#15](https://github.com/llancruzz/hogwarts/issues/15)
+
 ![Navigation Page](docs/navbar-page.png)
 
 ### Register (Sign up) / Login
+
+- Users are able to register for an account that enables them to create posts, as well as like, comment on, and follow the profiles of other users.
+- To ensure the accuracy of the chosen password, it is required that a unique username be provided along with it. Additionally, the password must be entered twice in order to minimize the possibility of any inadvertent errors.
+- Upon successful completion of the registration process, the user will be redirected to the login page, where they can utilize their newly created credentials to authenticate their account.
+- User Stories: [#11](https://github.com/llancruzz/hogwarts/issues/11) | [#12](https://github.com/llancruzz/hogwarts/issues/12) | [#13](https://github.com/llancruzz/hogwarts/issues/13) | [#14](https://github.com/llancruzz/hogwarts/issues/14)
 
 ![Resgister Sign up Page](docs/sign-up-page.png)
 ![Register Sign in Page](docs/sign-in-page.png)
 
 ### Post Creation / Edit Form
 
+- Registered users are granted access to create posts and share them with the world.
+- This form serves a dual purpose: it can be used both for creating a new post and for editing an existing one. an existing post.
+- Users registered are able to upload an image to represent their post listing, and choose from a options of categories to display their post. The form comprises a title and a content section as well.
+- In order to post their content, users must provide an image, a title, and the content itself.
+- User Stories : [#16](https://github.com/llancruzz/hogwarts/issues/16) | [#25](https://github.com/llancruzz/hogwarts/issues/25)
+
 ![Post create Page](docs/create-post-page.png)
 
 ### Post List View and Search Bar
+- Users can filter posts according to their chosen category when the post was created. This feature enables users to easily find the content that is most relevant and interesting to them.
+- Users can search for posts through a search bar using a keyword for the name of the post or the name of the user profile.
+- User Stories: [#19](https://github.com/llancruzz/hogwarts/issues/19) | [#20](https://github.com/llancruzz/hogwarts/issues/20) | [#22](https://github.com/llancruzz/hogwarts/issues/22) | [#23](https://github.com/llancruzz/hogwarts/issues/23)
 
 ![Post list view search bar Page](docs/post-search-list-view.png)
 
 ### Post Detail View
+- The post details view comprises the post's title, image, content, the selected House, as well as buttons for liking and commenting on the post.
+- It also displays the profile avatar, the date the post was created, and a dropdown menu to edit the post. 
+- Registered users  have the ability to edit their posts by making changes to the image, content, title, and by selecting a different category for their post.
+- Further details regarding each view will be explained below.
+- User Stories: [#25](https://github.com/llancruzz/hogwarts/issues/25) | [#24](https://github.com/llancruzz/hogwarts/issues/24) | [#26](https://github.com/llancruzz/hogwarts/issues/26)
 
 ![Post Detail Page](docs/edit-post-page.png)
 
 ### Comment List View
 
+- Registered users are able to leave comments on individual posts, even on their own posts.
+- The comment list view form includes the user's avatar, username, and the date the comment was posted.
+- If a post has no comments, a message will be displayed, inviting users to leave the first comment on the post.
+- User Stories: [#26](https://github.com/llancruzz/hogwarts/issues/26) | [#27](https://github.com/llancruzz/hogwarts/issues/27) | [#28](https://github.com/llancruzz/hogwarts/issues/28)
+
 ![Comment list Page](docs/comment-post-page.png)
 
 ### Comment Detail View
 
+- Registered users can edit their comments by making changes to the content of their previous comment.
+- User Stories: [#29](https://github.com/llancruzz/hogwarts/issues/29) | [#30](https://github.com/llancruzz/hogwarts/issues/30)
 ![Comment Detail Page](docs/edit-comment-post-page.png)
 
 ### Feed
 
-![Feed Page](#)
+![feed](#)
+- By allowing users to follow other users, the website's Feed section will display posts exclusively from authors whom the user has chosen to follow.
+- User Stories: [#22](https://github.com/llancruzz/hogwarts/issues/22) | [#34](https://github.com/llancruzz/hogwarts/issues/34) | [#35](https://github.com/llancruzz/hogwarts/issues/35)
 
 ### Liked
 
-![Liked Page](#)
+![liked](#)
+- Users have the ability to like posts they enjoy, which directly impacts the "Liked" section of the website, displaying only the posts that the user has previously liked.
+- User Stories: [#18](https://github.com/llancruzz/hogwarts/issues/18) | [#21](https://github.com/llancruzz/hogwarts/issues/21)
 
 ### Most Followed Users
+- Users can easily view the most followed profiles, which includes the avatar and username of each user. 
+- The component also display follow and unfollow buttons.
+- User Stories: [#22](https://github.com/llancruzz/hogwarts/issues/22) | [#32](https://github.com/llancruzz/hogwarts/issues/32)
 
 ![Most Followed Page](docs/most-followed-page.png)
 
 ### Profile
+- When users visit this section, they can view their personal statistics, such as:
+  -  The number of posts they have created.
+  -  The number of followers they have.
+  -  The number of people they follow.
+- Additionally, there is a small bio section where users can enter a quick description of themselves.
+- Clicking on the three dots opens a dropdown menu with options to edit the user's profile, change their username, or change their password.
+- User Stories: [#31](https://github.com/llancruzz/hogwarts/issues/31) | [#33](https://github.com/llancruzz/hogwarts/issues/33) | [#34](https://github.com/llancruzz/hogwarts/issues/34)
 
 ![Profile Page](docs/edit-page.png)
 
 ### Profile Edit Form
 
+- Registered users have the ability to edit their profile by updating their profile picture and bio.
+- User Stories: [#36](https://github.com/llancruzz/hogwarts/issues/36)
+
 ![Profile Edit Page](docs/edit-profile-page.png)
 
 ### Username and Password Edit Forms
+
+- Registered users have the ability to update their username and password by editing their account information.
+- User Stories: [#37](https://github.com/llancruzz/hogwarts/issues/37)
 
 ![Username Page](docs/username-edit-page.png)
 ![Password Page](docs/password-edit-page.png)
 
 ### Contact
 
+- Registered users can contact the web application administrator by submitting a contact form.
+- The user must provide a reason for contacting the administrator through the contact form. If they have any additional information, they can enter it in the details field.
+- User Stories: [#38](https://github.com/llancruzz/hogwarts/issues/38)
+
 ![Contact Page](docs/contact-page.png)
 
 ### House Profile
 
+- When users click on the description button of each house, a brief description or biography of the house appears. This allows users to learn more about each house in the Harry Potter world and their unique characteristics.
+- This section displays the point totals for each of the four Hogwarts houses. Points are awarded based on the number of likes that posts related to each house receive. For instance, if a post related to House 1 receives 10 likes, House 1 will have 10 points, and so on for the other houses.
+- User Stories: [#40](https://github.com/llancruzz/hogwarts/issues/40)
+
 ![House Profile Page](#)
 
 ### Icons
-
+- Using icons on your project can be beneficial in several ways:
+  - Ease of Use: Icons can make your project more user-friendly by providing visual cues for users.
+  - Visual Appeal: Icons can enhance the visual appeal of your project and make it more engaging for users.
+  - Internationalization: Icons can also help to overcome language barriers. Since icons are visual, they can be understood by people from different countries who may not speak the same language.
+- All the icons used in this project were added through the website [Font Awesome](https://fontawesome.com/)
 ![Icons Page](docs/icons.png)
 
 ### Not Found and Results Page
+
+- All page not found displays a message:
+  - Sorry, the page you're looking for doesn't exist
+- All page with no results of posts, feed, likes displays a message:
+  - No results found. Adjust the search keyword or like a post.
+  - No results found. Adjust the search keyword or follow a user.
+  - No results found, user hasn't posted yet.
 
 ![not found page](docs/not-found.png)
 ![not results page](docs/not-results.png)
@@ -294,7 +366,9 @@ Separate testing documentation can be viewed [here](TESTING.md).
 
 #### Fixed Bugs
 - Lorem Ipsum
+
 #### Remaining Bugs
+- To utilize the Hogwarts web app on iOS devices, Safari on MacOS, Samsung Internet on Samsung devices, and potentially other platforms, users must disable their anti-tracking features such as 'Prevent Cross Site Tracking' on Apple devices or 'Smart Anti-Tracking' on Samsung devices. This is necessary because the web app's Django Rest Framework API and React front-end are hosted on separate domains through Heroku, thereby triggering the anti-tracking mechanisms which obstruct cross-domain requests from the front-end to the API. Unfortunately, it appears that there is no solution available other than hosting the API and front-end on the same domain. (reference - https://stackoverflow.com/questions/56972162/is-there-a-workaround-for-safari-ios-prevent-cross-site-tracking-option-when).
 
 No known remaining bugs.
 
