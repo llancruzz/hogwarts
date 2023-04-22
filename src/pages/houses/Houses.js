@@ -18,10 +18,27 @@ import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 
 const Houses = () => {
-  const [show, setShow] = useState(false);
+  /*
+  Create each handle show and close for each house:
+  Control the display of each modal independently.
+  Prevent issue that opens up all the modals simultaneously with the same title and description.
+  */
+  const [showGryffindor, setShowGryffindor] = useState(false);
+  const [showSlytherin, setShowSlytherin] = useState(false);
+  const [showRavenclaw, setShowRavenclaw] = useState(false);
+  const [showHufflepuff, setShowHufflepuff] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleGryffindorShow = () => setShowGryffindor(true);
+  const handleGryffindorClose = () => setShowGryffindor(false);
+
+  const handleSlytherinShow = () => setShowSlytherin(true);
+  const handleSlytherinClose = () => setShowSlytherin(false);
+
+  const handleRavenclawShow = () => setShowRavenclaw(true);
+  const handleRavenclawClose = () => setShowRavenclaw(false);
+
+  const handleHufflepuffShow = () => setShowHufflepuff(true);
+  const handleHufflepuffClose = () => setShowHufflepuff(false);
 
   /*
   Fetch data about the house profile with the id that is in the url. 
@@ -65,16 +82,22 @@ const Houses = () => {
                 <Card.Title>Gryffindor</Card.Title>
               </Badge>
 
-              <Button className={btnStyles.Button} onClick={handleShow}>
+              <Button
+                className={btnStyles.Button}
+                onClick={handleGryffindorShow}
+              >
                 Description
               </Button>
-              <Modal show={show} onHide={handleClose}>
+              <Modal show={showGryffindor} onHide={handleGryffindorClose}>
                 <Modal.Header closeButton>
                   <Modal.Title>Gryffindor</Modal.Title>
                 </Modal.Header>
-                <Modal.Body></Modal.Body>
+                <Modal.Body>Description</Modal.Body>
                 <Modal.Footer>
-                  <Button className={btnStyles.Button} onClick={handleClose}>
+                  <Button
+                    className={btnStyles.Button}
+                    onClick={handleGryffindorClose}
+                  >
                     Close
                   </Button>
                 </Modal.Footer>
@@ -90,16 +113,22 @@ const Houses = () => {
               <Badge className={styles.Badge}>
                 <Card.Title>Slytherin</Card.Title>
               </Badge>
-              <Button className={btnStyles.Button} onClick={handleShow}>
+              <Button
+                className={btnStyles.Button}
+                onClick={handleSlytherinShow}
+              >
                 Description
               </Button>
-              <Modal show={show} onHide={handleClose}>
+              <Modal show={showSlytherin} onHide={handleSlytherinClose}>
                 <Modal.Header closeButton>
                   <Modal.Title>Slytherin</Modal.Title>
                 </Modal.Header>
-                <Modal.Body></Modal.Body>
+                <Modal.Body>Description</Modal.Body>
                 <Modal.Footer>
-                  <Button className={btnStyles.Button} onClick={handleClose}>
+                  <Button
+                    className={btnStyles.Button}
+                    onClick={handleSlytherinClose}
+                  >
                     Close
                   </Button>
                 </Modal.Footer>
@@ -115,16 +144,22 @@ const Houses = () => {
               <Badge className={styles.Badge}>
                 <Card.Title>Ravenclaw</Card.Title>
               </Badge>
-              <Button className={btnStyles.Button} onClick={handleShow}>
+              <Button
+                className={btnStyles.Button}
+                onClick={handleRavenclawShow}
+              >
                 Description
               </Button>
-              <Modal show={show} onHide={handleClose}>
+              <Modal show={showRavenclaw} onHide={handleRavenclawClose}>
                 <Modal.Header closeButton>
                   <Modal.Title>Ravenclaw</Modal.Title>
                 </Modal.Header>
-                <Modal.Body></Modal.Body>
+                <Modal.Body>Description</Modal.Body>
                 <Modal.Footer>
-                  <Button className={btnStyles.Button} onClick={handleClose}>
+                  <Button
+                    className={btnStyles.Button}
+                    onClick={handleRavenclawClose}
+                  >
                     Close
                   </Button>
                 </Modal.Footer>
@@ -140,16 +175,22 @@ const Houses = () => {
               <Badge className={styles.Badge}>
                 <Card.Title>Hufflepuff</Card.Title>
               </Badge>
-              <Button className={btnStyles.Button} onClick={handleShow}>
+              <Button
+                className={btnStyles.Button}
+                onClick={handleHufflepuffShow}
+              >
                 Description
               </Button>
-              <Modal show={show} onHide={handleClose}>
+              <Modal show={showHufflepuff} onHide={handleHufflepuffClose}>
                 <Modal.Header closeButton>
                   <Modal.Title>Hufflepuff</Modal.Title>
                 </Modal.Header>
-                <Modal.Body></Modal.Body>
+                <Modal.Body>Description</Modal.Body>
                 <Modal.Footer>
-                  <Button className={btnStyles.Button} onClick={handleClose}>
+                  <Button
+                    className={btnStyles.Button}
+                    onClick={handleHufflepuffClose}
+                  >
                     Close
                   </Button>
                 </Modal.Footer>
