@@ -49,36 +49,64 @@ const ContactForm = () => {
   and the value being the value entered by the user.
   */
   const handleChange = (event) => {
-    setContactData({
-      ...contactData,
-      /* KEY | VALUE */
-      [event.target.name]: event.target.value,
-    });
+    const { name, value } = event.target;
+    setContactData((prevContactData) => ({
+      ...prevContactData,
+      [name]: value,
+    }));
   };
 
   /*
   Form submit handler:
   Call preventDefault so that the page doesn't refresh.
   Create async function: inside a try-catch block, post all the formData to the endpoint in API application for user contacts.
+  Check if the form is valid
   Append all two relevant pieces of data: reason_contact and content.
   */
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
 
-    formData.append("reason_contact", reason_contact);
-    formData.append("content", content);
+    var isValid = true;
 
-    try {
-      await axiosReq.post("/contacts/", formData);
-      history.push("/contact/create");
-    } catch (err) {
-    // console.log(err);
-      if (err.response?.status !== 401) {
-        setErrors(err.response?.data);
+    if (!reason_contact) {
+      setErrors((prevState) => ({
+        ...prevState,
+        reason_contact: ["Please enter a reason for contacting us."],
+      }));
+      isValid = false;
+    }
+
+    if (!content) {
+      setErrors((prevState) => ({
+        ...prevState,
+        content: ["Please enter some details."],
+      }));
+      isValid = false;
+    }
+
+    if (isValid) {
+      formData.append("reason_contact", reason_contact);
+      formData.append("content", content);
+
+      try {
+        await axiosReq.post("/contacts/", formData);
+        history.push("/contact/create");
+        // Reset input fields
+        setContactData({
+          reason_contact: "",
+          content: "",
+        });
+      } catch (err) {
+        if (err.response?.status !== 401) {
+          setErrors(err.response?.data);
+        }
       }
+    } else {
+      setShowAlert(false);
     }
   };
+
   const textFields = (
     <div className="text-center">
       <Form.Group>
@@ -117,6 +145,7 @@ const ContactForm = () => {
         className={btnStyles.Button}
         type="submit"
         onClick={handleButtonSend}
+        onChange={handleChange}
       >
         Send
       </Button>
