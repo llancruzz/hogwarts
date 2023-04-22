@@ -343,7 +343,7 @@ Several components-entse created during the development of this project and are 
   - UX experience is improved as users can quickly identify the author of posts and their authentication state.
 
 - More Actions Dropdown
-  - This component was used on the profile, property detail and note components to present options for object editing and deletion.
+  - This component was used on the profile, post detail and comment components to present options for object editing and deletion.
   - UX was improved by presenting a consistent menu throughout the site while allowing for different functionality by passing handler functions as arguments (props) to the component.
 
 - NavBar
