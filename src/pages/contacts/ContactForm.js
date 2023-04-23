@@ -6,8 +6,10 @@ import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import logo from "../../assets/logo.png";
 import stylesImage from "../../styles/Image.module.css";
+import { useRedirect } from "../../hooks/useRedirect";
 
 const ContactForm = () => {
+  useRedirect("loggedOut");
   /* 
     Store the values for inputs on Contact Create Form using useState()
     Destructure the useState hook with:

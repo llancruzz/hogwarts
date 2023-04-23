@@ -16,8 +16,10 @@ import hufflepuff from "../../assets/hufflepuff.webp";
 import btnStyles from "../../styles/Button.module.css";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
+import { useRedirect } from "../../hooks/useRedirect";
 
 const Houses = () => {
+  useRedirect("loggedOut")
   /*
   Create each handle show and close for each house:
   Control the display of each modal independently.
