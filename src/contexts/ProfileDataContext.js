@@ -8,8 +8,8 @@ import { followHelper, unfollowHelper } from "../utils/utils";
 useContext()provides a way to pass through the component tree without having to pass props down manually at every level.
 Create and export the ProfileDataContext and SetProfileDataContext by calling the createContext function.
 */
-export const ProfileDataContext = createContext();
-export const SetProfileDataContext = createContext();
+const ProfileDataContext = createContext();
+const SetProfileDataContext = createContext();
 
 // Create two custom hooks to make accessing currentUser and setCurrentUser.
 export const useProfileData = () => useContext(ProfileDataContext);
@@ -48,7 +48,7 @@ export const ProfileDataProvider = ({ children }) => {
         },
       }));
     } catch (err) {
-    // console.log(err);
+      // console.log(err);
     }
   };
 
@@ -71,7 +71,7 @@ export const ProfileDataProvider = ({ children }) => {
         },
       }));
     } catch (err) {
-    // console.log(err);
+      // console.log(err);
     }
   };
 
@@ -87,7 +87,7 @@ export const ProfileDataProvider = ({ children }) => {
           popularProfiles: data,
         }));
       } catch (err) {
-      // console.log(err);
+        // console.log(err);
       }
     };
     handleMount();
