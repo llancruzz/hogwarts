@@ -89,7 +89,7 @@ function PostCreateForm() {
       const { data } = await axiosReq.post("/posts/", formData);
       history.push(`/posts/${data.id}`);
     } catch (err) {
-    // console.log(err);
+      // console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
@@ -121,6 +121,7 @@ function PostCreateForm() {
           aria-label="house"
           value={house}
           onChange={handlechange}
+          className={appStyles.Input}
         >
           <option>Select your House</option>
           <option value="Gryffindor">Gryffindor</option>
@@ -212,7 +213,7 @@ function PostCreateForm() {
           </Container>
         </Col>
         <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
-          <Container className={`${appStyles.Content}${styles.Container}`}>
+          <Container className={`${appStyles.Content} ${styles.Container}`}>
             {textFields}
           </Container>
         </Col>

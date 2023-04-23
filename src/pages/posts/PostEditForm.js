@@ -224,7 +224,7 @@ function PostEditForm() {
           </Container>
         </Col>
         <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
-          <Container className={`${appStyles.Content}${styles.Container}`}>
+          <Container className={`${appStyles.Content} ${styles.Container}`}>
             {textFields}
           </Container>
         </Col>

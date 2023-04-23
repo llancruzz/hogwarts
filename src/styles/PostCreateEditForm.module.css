@@ -1,5 +1,5 @@
 .Container {
-  min-height: 350px;
+  min-height: 400px;
   background: rgba(203, 45, 62, 0);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -7,4 +7,5 @@
   -webkit-backdrop-filter: blur(10.2px);
   border: 1px solid rgb(211 216 222);
   margin-bottom: 20px;
+  margin-top: 3rem;
 }
