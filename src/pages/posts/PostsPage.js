@@ -15,6 +15,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import appStyles from "../../App.module.css"
 
 function PostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
@@ -49,7 +50,7 @@ function PostsPage({ message, filter = "" }) {
   }, [filter, query, house, pathname, currentUser]);
 
   return (
-    <Row className="h-100">
+    <Row className="h-auto m-1">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
         {/* Search posts text and filter for each House */}
@@ -115,6 +116,7 @@ function PostsPage({ message, filter = "" }) {
           <>
             {posts.results.length ? (
               <InfiniteScroll
+                style={{ overflow: "inherit" }}
                 children={posts.results.map((post) => (
                   <Post key={post.id} {...post} setPosts={setPosts} />
                 ))}
@@ -130,7 +132,7 @@ function PostsPage({ message, filter = "" }) {
             )}
           </>
         ) : (
-          <Container className={styles.Container}>
+          <Container className={appStyles.Content}>
             <Asset spinner />
           </Container>
         )}
