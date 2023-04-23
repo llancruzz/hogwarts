@@ -48,7 +48,7 @@ function PostEditForm() {
           ? setPostData({ title, house, content, image })
           : history.push("/");
       } catch (err) {
-      // console.log(err);
+        // console.log(err);
       }
     };
     handleMount();
@@ -63,7 +63,7 @@ function PostEditForm() {
   Create a key value  pair, with the key being the input field name,  
   and the value being the value entered by the user.
   */
-  const handlechange = (event) => {
+  const handleChange = (event) => {
     setPostData({
       ...postData,
       /* KEY | VALUE */
@@ -116,7 +116,7 @@ function PostEditForm() {
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
-    // console.log(err);
+      // console.log(err);
     }
   };
 
@@ -128,7 +128,7 @@ function PostEditForm() {
           type="text"
           name="title"
           value={title}
-          onChange={handlechange}
+          onChange={handleChange}
         />
       </Form.Group>
       {/* Add alert bootstrap to display any error of empty title fields */}
@@ -144,7 +144,7 @@ function PostEditForm() {
           name="house"
           aria-label="house"
           value={house}
-          onChange={handlechange}
+          onChange={handleChange}
         >
           <option>Select your House</option>
           <option value="Gryffindor">Gryffindor</option>
@@ -165,7 +165,7 @@ function PostEditForm() {
           rows={6}
           name="content"
           value={content}
-          onChange={handlechange}
+          onChange={handleChange}
         />
       </Form.Group>
       {/* Add alert bootstrap to display any error of empty content fields */}
