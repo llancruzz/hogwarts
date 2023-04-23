@@ -297,7 +297,7 @@ The site logo was sourced from [PNGEGG](https://www.pngegg.com/). Please refer t
 - This section displays the point totals for each of the four Hogwarts houses. Points are awarded based on the number of likes that posts related to each house receive. For instance, if a post related to House 1 receives 10 likes, House 1 will have 10 points, and so on for the other houses.
 - User Stories: [#40](https://github.com/llancruzz/hogwarts/issues/40)
 
-![House Profile Page](#)
+![House Profile Page](docs/houses-profiles.png)
 
 ### Icons
 - Using icons on your project can be beneficial in several ways:
@@ -356,8 +356,8 @@ Several components-entse created during the development of this project and are 
 
 ### Future Features
 
-- Lorem Ipsum
-
+- To enhance the reach of posts, I will create a 'share' button for them on various social media platforms like Twitter, Facebook, Instagram, WhatsApp, and others. This will allow users to easily share your content and increase its visibility.
+- To facilitate more effective and seamless communication between users, I plan to create a chat messenger for them. This platform will allow users to interact with each other easily, engaging in real-time conversations via text, voice or video calls, and file sharing.
 ## Testing
 
 Separate testing documentation can be viewed [here](TESTING.md).
