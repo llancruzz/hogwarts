@@ -26,7 +26,7 @@ function PostCreateForm() {
   */
   const [postData, setPostData] = useState({
     title: "",
-    house: "",
+    house: "Select your House",
     content: "",
     image: "",
   });
@@ -130,7 +130,7 @@ function PostCreateForm() {
           <option value="Hufflepuff">Hufflepuff</option>
         </Form.Control>
         {errors.house?.map((message, idx) => (
-          <Alert variant="warning" className={appStyles.Alert} key={idx}>
+          <Alert variant="warning" key={idx}>
             {message}
           </Alert>
         ))}
