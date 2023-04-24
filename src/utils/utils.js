@@ -57,10 +57,12 @@ export const setTokenTimestamp = (data) => {
   const refreshTokenTimestamp = jwtDecode(data?.refresh_token).exp;
   localStorage.setItem("refreshTokenTimestamp", refreshTokenTimestamp);
 };
+
 // Return a boolean value that will tell us if we should refresh the users token or not.
 export const shouldRefreshToken = () => {
   return !!localStorage.getItem("refreshTokenTimestamp");
 };
+
 // Remove the localStorage value if the user logs out or their refresh token has expired.
 export const removeTokenTimestamp = () => {
   localStorage.removeItem("refreshTokenTimestamp");
