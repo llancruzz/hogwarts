@@ -84,7 +84,7 @@ function App() {
             render={() => <UserPasswordForm />}
           />
           <Route exact path="/contact/create" render={() => <ContactForm />} />
-          <Route exact path="/houses" render={() => <Houses />} />
+          <Route exact path="/houses/:id" render={() => <Houses />} />
           <Route render={() => <NotFound />} />
         </Switch>
       </Container>

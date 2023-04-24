@@ -14,12 +14,13 @@ import slytherin from "../../assets/slytherin.webp";
 import ravenclaw from "../../assets/havenclaw.webp";
 import hufflepuff from "../../assets/hufflepuff.webp";
 import btnStyles from "../../styles/Button.module.css";
-import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
+import { useParams } from "react-router-dom";
 
-const Houses = () => {
-  useRedirect("loggedOut")
+const Houses = (props) => {
+  useRedirect("loggedOut");
+  const { house_name, description, current_points } = props;
   /*
   Create each handle show and close for each house:
   Control the display of each modal independently.
@@ -66,6 +67,7 @@ const Houses = () => {
           axiosReq.get(`/houses/${id}`),
         ]);
         setHouseProfile({ results: [houseProfile] });
+        console.log(houseProfile);
       } catch (err) {
         console.log(err);
       }
@@ -81,7 +83,7 @@ const Houses = () => {
             <Card.Img variant="top" src={gryffindor} />
             <Card.Body>
               <Badge className={styles.Badge}>
-                <Card.Title>Gryffindor</Card.Title>
+                <Card.Title>Grinffindor</Card.Title>
               </Badge>
 
               <Button
@@ -92,7 +94,7 @@ const Houses = () => {
               </Button>
               <Modal show={showGryffindor} onHide={handleGryffindorClose}>
                 <Modal.Header closeButton>
-                  <Modal.Title>Gryffindor</Modal.Title>
+                  <Modal.Title>Grinffindor</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>Description</Modal.Body>
                 <Modal.Footer>
