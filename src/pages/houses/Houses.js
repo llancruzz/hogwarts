@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
-import {
-  Badge,
-  Button,
-  Card,
-  Col,
-  Container,
-  Modal,
-  Row,
-} from "react-bootstrap";
+import Badge from "react-bootstrap/Badge";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Modal from "react-bootstrap/Modal";
+import Row from "react-bootstrap/Row";
 import styles from "../../styles/Houses.module.css";
 import gryffindor from "../../assets/gryffindor.webp";
 import slytherin from "../../assets/slytherin.webp";

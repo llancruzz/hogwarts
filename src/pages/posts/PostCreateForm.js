@@ -10,7 +10,8 @@ import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Asset from "../../components/Asset";
 import { useHistory } from "react-router-dom";
-import { Alert, Image } from "react-bootstrap";
+import Alert from "react-bootstrap/Alert";
+import Image from "react-bootstrap/Image";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
 

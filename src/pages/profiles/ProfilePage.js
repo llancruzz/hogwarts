@@ -13,7 +13,8 @@ import {
   useSetProfileData,
 } from "../../contexts/ProfileDataContext";
 import { axiosReq } from "../../api/axiosDefaults";
-import { Button, Image } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Image from "react-bootstrap/Image";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Post from "../posts/Post";
 import { fetchMoreData } from "../../utils/utils";
@@ -56,7 +57,7 @@ function ProfilePage() {
         setProfilePosts(profilePosts);
         setHasLoaded(true);
       } catch (err) {
-      // console.log(err);
+        // console.log(err);
       }
     };
     fetchData();

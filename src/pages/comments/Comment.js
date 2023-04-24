@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../../styles/Comment.module.css";
-import { Media } from "react-bootstrap";
+import Media from "react-bootstrap/Media";
 import { Link } from "react-router-dom";
 import ProfilePicture from "../../components/ProfilePicture";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
@@ -52,7 +52,7 @@ const Comment = (props) => {
         results: prevComments.results.filter((comment) => comment.id !== id),
       }));
     } catch (err) {
-    // console.log(err);
+      // console.log(err);
     }
   };
 

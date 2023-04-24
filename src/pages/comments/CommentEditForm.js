@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 import styles from "../../styles/CommentCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -40,7 +41,7 @@ function CommentEditForm(props) {
       }));
       setShowEditForm(false);
     } catch (err) {
-    // console.log(err);
+      // console.log(err);
     }
   };
   return (

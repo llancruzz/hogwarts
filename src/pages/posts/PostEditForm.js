@@ -8,7 +8,8 @@ import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { useHistory, useParams } from "react-router-dom";
-import { Alert, Image } from "react-bootstrap";
+import Alert from "react-bootstrap/Alert";
+import Image from "react-bootstrap/Image";
 import { axiosReq } from "../../api/axiosDefaults";
 
 function PostEditForm() {
