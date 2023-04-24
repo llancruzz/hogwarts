@@ -6,7 +6,7 @@
 - [User Story Testing](#user-story-testing)
   - [Navigation](#navigation)
   - [Authentication](#authentication)
-  - [Adding & Liking Posts](#adding-&-liking-posts)
+  - [Adding And Liking Posts](#adding-and-liking-posts)
   - [The Posts Page](#the-posts-page)
   - [The Post Page](#the-post-page)
   - [The Profile Page](#the-profile-page)
@@ -33,10 +33,10 @@ In addition to the test detailed below, all site URLs were tested to ensure they
 
 | Test # | Test | Outcome | Result |
 |---|---|---|---|
-| 1 | The navigation bar ought to be prominently displayed on each page and provide users with clear indication of their current position within the site's hierarchical structure. | The navigation bar is situated at the top of every page for easy accessibility. | PASS |
-| 2 | The navigation bar should adjust its layout to fit the screen size of the device it is being viewed on. | The navigation bar is designed to be responsive and adapt to different viewport sizes, ensuring optimal functionality across various devices. | PASS |
-| 3 | All links are verified to be precise and effectively direct users to their intended resources. | There are no broken links, and all links direct users to the expected URLs. | PASS |
-| 4 | Unauthorized users can only view the "Sign In" and "Sign Up" links on the navigation bar. | Unauthorized users do not have CRUD functionality. | PASS |
+| 1 | The navigation bar ought to be prominently displayed on each page and provide users with clear indication of their current position within the site's hierarchical structure. | The navigation bar is situated at the top of every page for easy accessibility. | PASS :white_check_mark: |
+| 2 | The navigation bar should adjust its layout to fit the screen size of the device it is being viewed on. | The navigation bar is designed to be responsive and adapt to different viewport sizes, ensuring optimal functionality across various devices. | PASS :white_check_mark: |
+| 3 | All links are verified to be precise and effectively direct users to their intended resources. | There are no broken links, and all links direct users to the expected URLs. | PASS :white_check_mark: |
+| 4 | Unauthorized users can only view the "Sign In" and "Sign Up" links on the navigation bar. | Unauthorized users do not have CRUD functionality. | PASS :white_check_mark: |
 
 ### Authentication
 
@@ -50,11 +50,11 @@ In addition to the test detailed below, all site URLs were tested to ensure they
 | Test # | Test | Outcome | Result |
 |---|---|---|---|
 | 1 | Users are able to register by providing a unique username and password. | Confirmed username must be unique, confirmed password must be match | PASS |
-| 2 | Click on the "Sign In" button to submit the credentials. | Upon successful login, users will be redirected to the home page where they can access additional features and functionalities. | PASS |
-| 3 | Look for any indication of the user's login status, such as a "Sign Out" button or a user profile icon. | If the user is not logged in and the app redirects the user to the sign in page. | PASS |
-| 4 | Close the app or the tab/browser without logging out. | Users can remain logged in for a period exceeding 12 hours. | PASS |
+| 2 | Click on the "Sign In" button to submit the credentials. | Upon successful login, users will be redirected to the home page where they can access additional features and functionalities. | PASS :white_check_mark: |
+| 3 | Look for any indication of the user's login status, such as a "Sign Out" button or a user profile icon. | If the user is not logged in and the app redirects the user to the sign in page. | PASS :white_check_mark: |
+| 4 | Close the app or the tab/browser without logging out. | Users can remain logged in for a period exceeding 12 hours. | PASS :white_check_mark: |
 
-### Adding & Liking Posts
+### Adding And Liking Posts
 
 #### User Story [#16](https://github.com/llancruzz/hogwarts/issues/16) | [#17](https://github.com/llancruzz/hogwarts/issues/17) | [#18](https://github.com/llancruzz/hogwarts/issues/18)
 
@@ -64,10 +64,10 @@ In addition to the test detailed below, all site URLs were tested to ensure they
 
 | Test # | Test | Outcome | Result |
 |---|---|---|---|
-| 1 | Click on the "Create" icon, enter the necessary information for the post, such as title, image, houses category and content fields. | The post appears on the user's profile | PASS |
-| 2 | Click on the post to view its details. | Post details are displayed with its details and date/time posted. | PASS |
-| 3 | Click on the "Like" button for the post. | The "Like" count for the post increases by 1. | PASS |
-| 4 |  The user can not like its own post. | If a user attempts to like their own post, a message alert will be displayed informing them that this action is not permitted. | PASS |
+| 1 | Click on the "Create" icon, enter the necessary information for the post, such as title, image, houses category and content fields. | The post appears on the user's profile | PASS :white_check_mark: |
+| 2 | Click on the post to view its details. | Post details are displayed with its details and date/time posted. | PASS :white_check_mark: |
+| 3 | Click on the "Like" button for the post. | The "Like" count for the post increases by 1. | PASS :white_check_mark: |
+| 4 |  The user can not like its own post. | If a user attempts to like their own post, a message alert will be displayed informing them that this action is not permitted. | PASS :white_check_mark: |
 
 ### The Posts Page
 
@@ -81,11 +81,11 @@ In addition to the test detailed below, all site URLs were tested to ensure they
 
 | Test # | Test | Outcome | Result |
 |---|---|---|---|
-| 1 | Scroll down the feed to view additional posts. |  Posts are displayed in descending order of creation date. | PASS |
-| 2 | Navigate to the search bar on the app, enter a keyword related to the post or user. | Search results display the relevant posts or user profiles and the user is redirected to the relevant page after clicking on a search result. | PASS |
-| 3 | Click on the "Liked" icon on navbar. | The posts the user has liked are displayed in descending order of creation date. | PASS |
-| 4 | Users have the ability to follow other users' profiles, enabling them to receive updates and notifications regarding their activities. |  When a user follows another profile, they will be able to view the posts made by that profile in their feed. This functionality is visible to all users who are following the profile.| PASS |
-| 5 | Scroll down to the end of the first set of posts. | More posts are loaded automatically without the user having to click on a "next page" button or similar. | PASS |
+| 1 | Scroll down the feed to view additional posts. |  Posts are displayed in descending order of creation date. | PASS :white_check_mark: |
+| 2 | Navigate to the search bar on the app, enter a keyword related to the post or user. | Search results display the relevant posts or user profiles and the user is redirected to the relevant page after clicking on a search result. | PASS :white_check_mark: |
+| 3 | Click on the "Liked" icon on navbar. | The posts the user has liked are displayed in descending order of creation date. | PASS :white_check_mark: |
+| 4 | Users have the ability to follow other users' profiles, enabling them to receive updates and notifications regarding their activities. |  When a user follows another profile, they will be able to view the posts made by that profile in their feed. This functionality is visible to all users who are following the profile.| PASS :white_check_mark: |
+| 5 | Scroll down to the end of the first set of posts. | More posts are loaded automatically without the user having to click on a "next page" button or similar. | PASS :white_check_mark: |
 
 ### The Post Page
 
@@ -101,13 +101,13 @@ In addition to the test detailed below, all site URLs were tested to ensure they
 
 | Test # | Test | Outcome | Result |
 |---|---|---|---|
-| 1 | Click on a post from the list of posts displayed on the page. | Posts details are displayed and the comments related to the post are displayed | PASS |
-| 2 | Click on the "Edit" button. | The updated post title, house, content and image are saved and displayed. | PASS |
-| 3 | Click on the "Leave a comment" and click on "post" button. | The comment is added to the post and displayed after the user clicks on the "Post" button | PASS |
-| 4 | Check if there is a timestamp associated with each comment indicating when the comment was made. | The comments are displayed along with their corresponding timestamps. | PASS |
-| 5 | Scroll down to the comments section. |The comments related to the post are displayed. | PASS |
-| 6 | Click on the delete button next to the comment. (DOTS) | The comment is successfully deleted and removed from the post. | PASS |
-| 7 | Click on the edit button next to the comment. (DOTS) | The comment is successfully edited and updated with the new changes. | PASS |
+| 1 | Click on a post from the list of posts displayed on the page. | Posts details are displayed and the comments related to the post are displayed | PASS :white_check_mark: |
+| 2 | Click on the "Edit" button. | The updated post title, house, content and image are saved and displayed. | PASS :white_check_mark: |
+| 3 | Click on the "Leave a comment" and click on "post" button. | The comment is added to the post and displayed after the user clicks on the "Post" button | PASS :white_check_mark: |
+| 4 | Check if there is a timestamp associated with each comment indicating when the comment was made. | The comments are displayed along with their corresponding timestamps. | PASS :white_check_mark: |
+| 5 | Scroll down to the comments section. |The comments related to the post are displayed. | PASS :white_check_mark: |
+| 6 | Click on the delete button next to the comment. (DOTS) | The comment is successfully deleted and removed from the post. | PASS :white_check_mark: |
+| 7 | Click on the edit button next to the comment. (DOTS) | The comment is successfully edited and updated with the new changes. | PASS :white_check_mark: |
 
 ### The Profile Page
 
@@ -123,13 +123,13 @@ In addition to the test detailed below, all site URLs were tested to ensure they
 
 | Test # | Test | Outcome | Result |
 |---|---|---|---|
-| 1 | Click on the username of any user whose profile you want to view. | The user profile is successfully displayed and the user's posts are displayed on their profile page. | PASS |
-| 2 | Observe a list of profiles is displayed on the page . | List of profiles is successfully displayed on the most followed profiles page and the profiles are ordered by number of followers, with the most followed profiles listed first. | PASS |
-| 3 | Navigate to the profile of any user whose statistics you want to view. | The user's statistics are successfully displayed on their profile page and the statistics include their bio, number of posts, number of followers, and number of users they are following. | PASS |
-| 4 | Navigate to the profile page of any user and click on the "follow" button or "unfollow". | The followed user is successfully added to the "Following" page after clicking on the "Follow" button and removed from the "Following" page after clicking on the "Unfollow" button. | PASS |
-| 5 | Navigate back to the user's profile page. | All posts created by the user are displayed on the "Posts" page. | PASS |
-| 6 | Click on the "Edit Profile" button.(DOTS) and update the profile picture and bio. | The updated profile picture and bio are displayed on the user profile page after clicking on the "Save" button | PASS |
-| 7 | Click on the "Edit" button.(DOTS) "Change Username" and "Change Password. | The updated username and password are displayed on the account settings page after clicking on the "Save" button and the login is successful with the updated credentials. | PASS |
+| 1 | Click on the username of any user whose profile you want to view. | The user profile is successfully displayed and the user's posts are displayed on their profile page. | PASS :white_check_mark: |
+| 2 | Observe a list of profiles is displayed on the page . | List of profiles is successfully displayed on the most followed profiles page and the profiles are ordered by number of followers, with the most followed profiles listed first. | PASS :white_check_mark: |
+| 3 | Navigate to the profile of any user whose statistics you want to view. | The user's statistics are successfully displayed on their profile page and the statistics include their bio, number of posts, number of followers, and number of users they are following. | PASS :white_check_mark: |
+| 4 | Navigate to the profile page of any user and click on the "follow" button or "unfollow". | The followed user is successfully added to the "Following" page after clicking on the "Follow" button and removed from the "Following" page after clicking on the "Unfollow" button. | PASS :white_check_mark: |
+| 5 | Navigate back to the user's profile page. | All posts created by the user are displayed on the "Posts" page. | PASS :white_check_mark: |
+| 6 | Click on the "Edit Profile" button.(DOTS) and update the profile picture and bio. | The updated profile picture and bio are displayed on the user profile page after clicking on the "Save" button | PASS :white_check_mark: |
+| 7 | Click on the "Edit" button.(DOTS) "Change Username" and "Change Password. | The updated username and password are displayed on the account settings page after clicking on the "Save" button and the login is successful with the updated credentials. | PASS :white_check_mark: |
 
 ### Contact
 
@@ -139,8 +139,8 @@ In addition to the test detailed below, all site URLs were tested to ensure they
 
 | Test # | Test | Outcome | Result |
 |---|---|---|---|
-| 1 |Navigate to the "Contact" section of the web application. Fill out the contact form click the "Send" button. | A message appears after clicking the "Send" button, indicating thanks for getting in touch. | PASS |
-| 2 | The form cannot be left blank; users are required to fill it out before submitting. | If the form is submitted while empty, an error message will be displayed. | PASS |
+| 1 |Navigate to the "Contact" section of the web application. Fill out the contact form click the "Send" button. | A message appears after clicking the "Send" button, indicating thanks for getting in touch. | PASS :white_check_mark: |
+| 2 | The form cannot be left blank; users are required to fill it out before submitting. | If the form is submitted while empty, an error message will be displayed. | PASS :white_check_mark: |
 
 ### House Profile
 
@@ -150,8 +150,8 @@ In addition to the test detailed below, all site URLs were tested to ensure they
 
 | Test # | Test | Outcome | Result |
 |---|---|---|---|
-| 1 | Navigate to the "House" section of the web application and click on a "description" button. | Clicking on the "Description" button will display relevant details about each Hogwarts house. | PASS |
-| 2 |  | | PASS |
+| 1 | Navigate to the "House" section of the web application and click on a "description" button. | Clicking on the "Description" button will display relevant details about each Hogwarts house. | PASS :white_check_mark: |
+| 2 |  | | PASS :white_check_mark: |
 
 ## Code Validation
 
@@ -168,24 +168,24 @@ The [W3C CSS Validator Service](https://jigsaw.w3.org/css-validator/#validate_by
 
 | File | Result |
 |---|---|
-| [Asset.module.css](#) | PASS |
-| [Button.module.css](#) | PASS |
-| [Comment.module.css](#) | PASS |
-| [CommentCreateEditForm.module.css](#) | PASS |
-| [Houses.module.css](#) | PASS |
-| [Image.module.css](#) | PASS |
-| [MoreDropdown.module.css](#) | PASS |
-| [NavBar.module.css](#) | PASS |
-| [NotFound.module.css](#) | PASS |
-| [PopularProfiles.module.css](#) | PASS |
-| [Post.module.css](#) | PASS |
-| [PostCreateEditForm.module.css](#) | PASS |
-| [PostsPage.module.css](#) | PASS |
-| [Profile.module.css](#) | PASS |
-| [ProfileEdit.module.css](#) | PASS |
-| [ProfilePage.module.css](#) | PASS |
-| [ProfilePicture.module.css](#) | PASS |
-| [SignInUpForm.module.css](#) | PASS |
+| [Asset.module.css](https://raw.githubusercontent.com/llancruzz/hogwarts/main/docs/asset-css.png) | PASS :white_check_mark: |
+| [Button.module.css](https://raw.githubusercontent.com/llancruzz/hogwarts/main/docs/button-css.png) | PASS :white_check_mark: |
+| [Comment.module.css](https://raw.githubusercontent.com/llancruzz/hogwarts/main/docs/comment-css.png) | PASS :white_check_mark: |
+| [CommentCreateEditForm.module.css](https://raw.githubusercontent.com/llancruzz/hogwarts/main/docs/comment-create-edit-form-css.png) | PASS :white_check_mark: |
+| [Houses.module.css](https://raw.githubusercontent.com/llancruzz/hogwarts/main/docs/houses-css.png) | PASS :white_check_mark: |
+| [Image.module.css](https://raw.githubusercontent.com/llancruzz/hogwarts/main/docs/image-css.png) | PASS :white_check_mark: |
+| [MoreDropdown.module.css](https://raw.githubusercontent.com/llancruzz/hogwarts/main/docs/more-dropdown-css.png) | PASS :white_check_mark: |
+| [NavBar.module.css](https://raw.githubusercontent.com/llancruzz/hogwarts/main/docs/navbar-css.png) | PASS :white_check_mark: |
+| [NotFound.module.css](https://raw.githubusercontent.com/llancruzz/hogwarts/main/docs/not-found-css.png) | PASS :white_check_mark: |
+| [PopularProfiles.module.css](https://raw.githubusercontent.com/llancruzz/hogwarts/main/docs/popular-profiles-css.png) | PASS :white_check_mark: |
+| [Post.module.css](https://raw.githubusercontent.com/llancruzz/hogwarts/main/docs/post-css.png) | PASS :white_check_mark: |
+| [PostCreateEditForm.module.css](https://raw.githubusercontent.com/llancruzz/hogwarts/main/docs/post-create-edit-form-css.png) | PASS :white_check_mark: |
+| [PostsPage.module.css](https://raw.githubusercontent.com/llancruzz/hogwarts/main/docs/posts-page-css.png) | PASS :white_check_mark: |
+| [Profile.module.css](https://raw.githubusercontent.com/llancruzz/hogwarts/main/docs/profile-css.png) | PASS :white_check_mark: |
+| [ProfileEdit.module.css](https://raw.githubusercontent.com/llancruzz/hogwarts/main/docs/profile-edit-css.png) | PASS :white_check_mark: |
+| [ProfilePage.module.css](https://raw.githubusercontent.com/llancruzz/hogwarts/main/docs/profile-page-css.png) | PASS :white_check_mark: |
+| [ProfilePicture.module.css](https://raw.githubusercontent.com/llancruzz/hogwarts/main/docs/profile-picture-css.png) | PASS :white_check_mark: |
+| [SignInUpForm.module.css](https://raw.githubusercontent.com/llancruzz/hogwarts/main/docs/sign-in-up-form-css.png) | PASS :white_check_mark: |
 
 ### Lighthouse Scores
 
