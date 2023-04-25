@@ -73,7 +73,7 @@ The initial aims of the project, which formed the basis for user story creation,
 
 - Allow users to search for posts using a filter.
 - Allow posts to be liked for future review.
-- Allow popular sellers to be followed so new listings can be seen via a newsfeed.
+- Allow popular profiles to be followed so new posts can be seen via a feed.
 - Registered users can leave comments on posts.
 - Site Owners can create/edit/delete their posts.
 - Registered users can read and comment on another user's posts.
@@ -365,12 +365,11 @@ Separate testing documentation can be viewed [here](TESTING.md).
 ### Bugs
 
 #### Fixed Bugs
-- Lorem Ipsum
+- Overall, the bugs that have been rectified in this project are typical errors that include typos, omitted variable declarations, and improper indentations. Please [click here](https://github.com/llancruzz/hogwarts/search?q=fix&type=commits) to access a comprehensive list of bug fixes for this project.
 
 #### Remaining Bugs
 - To utilize the Hogwarts web app on iOS devices, Safari on MacOS, Samsung Internet on Samsung devices, and potentially other platforms, users must disable their anti-tracking features such as 'Prevent Cross-Site Tracking' on Apple devices or 'Smart Anti-Tracking' on Samsung devices. This is necessary because the web app's Django Rest Framework API and React front-end are hosted on separate domains through Heroku, thereby triggering the anti-tracking mechanisms which obstruct cross-domain requests from the front end to the API. Unfortunately, it appears that there is no solution available other than hosting the API and front end on the same domain. (reference - https://stackoverflow.com/questions/56972162/is-there-a-workaround-for-safari-ios-prevent-cross-site-tracking-option-when).
-
-No known remaining bugs.
+- Upon logging in, I noticed that the follow and unfollow buttons require a page refresh to function properly. I suspect that this is a token defect, as even the tutors were unable to comprehend the issue. Given the time constraints for project submission, I have taken the initiative to report the bug. However, I intend to devote further research to discovering a viable solution. Once the issue has been resolved, I plan to share the solution with the Slack Code Institute Community so that future students encountering the same problem may benefit from the information.
 
 ## Technologies Used
 
@@ -387,9 +386,7 @@ No known remaining bugs.
 - [Axios](https://axios-http.com/) - Promise based HTTP client for the browser and node.js. Used to make HTTP requests from throughout the application.
 - [jwt-decode](https://github.com/auth0/jwt-decode) - Used to decode and extract information from a JWT token.
 - react-router-dom - Routing library for the React Javascript library. Used to display different components based on the URL entered in the browser.
-- [react-google-maps/api](https://react-google-maps-api-docs.netlify.app/) - Provides bindings to the Google Maps JavaScript API (v3) and lets it be used in applications as React components. Used to display a map of the local area on the property page.
 - [react-infinite-scroll-component](https://github.com/ankeetmaini/react-infinite-scroll-component) - Component which manages the loading of paginated content. Used to automatically load more content as the user browses site content.
-- [react-textarea-autosize](https://github.com/Andarist/react-textarea-autosize) - A replacement for the textarea component that automatically resizes. Used to improve the user experience as they create notes.
 
 ### Programs and Tools Used
 

@@ -7,10 +7,10 @@ import Container from "react-bootstrap/Container";
 import Modal from "react-bootstrap/Modal";
 import Row from "react-bootstrap/Row";
 import styles from "../../styles/Houses.module.css";
-import gryffindor from "../../assets/gryffindor.webp";
 import slytherin from "../../assets/slytherin.webp";
 import ravenclaw from "../../assets/havenclaw.webp";
 import hufflepuff from "../../assets/hufflepuff.webp";
+import gryffindor from "../../assets/gryffindor.webp";
 import btnStyles from "../../styles/Button.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
@@ -19,6 +19,7 @@ import { useParams } from "react-router-dom";
 const Houses = (props) => {
   useRedirect("loggedOut");
   const { house_name, description, current_points } = props;
+
   /*
   Create each handle show and close for each house:
   Control the display of each modal independently.
@@ -62,7 +63,7 @@ const Houses = (props) => {
     const handleMount = async () => {
       try {
         const [{ data: houseProfile }] = await Promise.all([
-          axiosReq.get(`/houses/${id}`),
+          axiosReq.get(`/houses/`),
         ]);
         setHouseProfile({ results: [houseProfile] });
         console.log(houseProfile);
@@ -81,7 +82,7 @@ const Houses = (props) => {
             <Card.Img variant="top" src={gryffindor} />
             <Card.Body>
               <Badge className={styles.Badge}>
-                <Card.Title>Grinffindor</Card.Title>
+                <Card.Title>Gryffindor</Card.Title>
               </Badge>
 
               <Button
@@ -92,7 +93,7 @@ const Houses = (props) => {
               </Button>
               <Modal show={showGryffindor} onHide={handleGryffindorClose}>
                 <Modal.Header closeButton>
-                  <Modal.Title>Grinffindor</Modal.Title>
+                  <Modal.Title>Gryffindor</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>Description</Modal.Body>
                 <Modal.Footer>
