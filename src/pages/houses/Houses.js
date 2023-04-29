@@ -65,7 +65,7 @@ const Houses = () => {
         ]);
         setHouseProfile({ results: [houseProfile] });
       } catch (err) {
-       // console.log(err);
+        // console.log(err);
       }
     };
     handleMount();
@@ -80,7 +80,7 @@ const Houses = () => {
               <Card.Img variant="top" src={gryffindor} />
               <Card.Body>
                 <Badge className={styles.Badge}>
-                  <Card.Title>{houseGr.results[2].house_name}</Card.Title>
+                  <Card.Title>{houseGr.results[1].house_name}</Card.Title>
                 </Badge>
 
                 <Button
@@ -91,9 +91,9 @@ const Houses = () => {
                 </Button>
                 <Modal show={showGryffindor} onHide={handleGryffindorClose}>
                   <Modal.Header closeButton>
-                    <Modal.Title>{houseGr.results[2].house_name}</Modal.Title>
+                    <Modal.Title>{houseGr.results[1].house_name}</Modal.Title>
                   </Modal.Header>
-                  <Modal.Body>{houseGr.results[2].description}</Modal.Body>
+                  <Modal.Body>{houseGr.results[1].description}</Modal.Body>
                   <Modal.Footer>
                     <Button
                       className={btnStyles.Button}
@@ -104,7 +104,7 @@ const Houses = () => {
                   </Modal.Footer>
                 </Modal>
                 <Card.Text className={`${styles.Badge} pb-2 `}>
-                  Points: {houseGr.results[2].current_points}
+                  Points: {houseGr.results[1].current_points}
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -116,7 +116,7 @@ const Houses = () => {
               <Card.Img variant="top" src={slytherin} />
               <Card.Body>
                 <Badge className={styles.Badge}>
-                  <Card.Title>{houseSy.results[0].house_name}</Card.Title>
+                  <Card.Title>{houseSy.results[3].house_name}</Card.Title>
                 </Badge>
                 <Button
                   className={btnStyles.Button}
@@ -126,9 +126,9 @@ const Houses = () => {
                 </Button>
                 <Modal show={showSlytherin} onHide={handleSlytherinClose}>
                   <Modal.Header closeButton>
-                    <Modal.Title>{houseSy.results[0].house_name}</Modal.Title>
+                    <Modal.Title>{houseSy.results[3].house_name}</Modal.Title>
                   </Modal.Header>
-                  <Modal.Body>{houseSy.results[0].description}</Modal.Body>
+                  <Modal.Body>{houseSy.results[3].description}</Modal.Body>
                   <Modal.Footer>
                     <Button
                       className={btnStyles.Button}
@@ -139,7 +139,7 @@ const Houses = () => {
                   </Modal.Footer>
                 </Modal>
                 <Card.Text className={`${styles.Badge} pb-2 `}>
-                  Points: {houseSy.results[0].current_points}
+                  Points: {houseSy.results[3].current_points}
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -151,7 +151,7 @@ const Houses = () => {
               <Card.Img variant="top" src={ravenclaw} />
               <Card.Body>
                 <Badge className={styles.Badge}>
-                  <Card.Title>{houseRa.results[1].house_name}</Card.Title>
+                  <Card.Title>{houseRa.results[0].house_name}</Card.Title>
                 </Badge>
                 <Button
                   className={btnStyles.Button}
@@ -161,9 +161,9 @@ const Houses = () => {
                 </Button>
                 <Modal show={showRavenclaw} onHide={handleRavenclawClose}>
                   <Modal.Header closeButton>
-                    <Modal.Title>{houseRa.results[1].house_name}</Modal.Title>
+                    <Modal.Title>{houseRa.results[0].house_name}</Modal.Title>
                   </Modal.Header>
-                  <Modal.Body>{houseRa.results[1].description}</Modal.Body>
+                  <Modal.Body>{houseRa.results[0].description}</Modal.Body>
                   <Modal.Footer>
                     <Button
                       className={btnStyles.Button}
@@ -174,7 +174,7 @@ const Houses = () => {
                   </Modal.Footer>
                 </Modal>
                 <Card.Text className={`${styles.Badge} pb-2 `}>
-                  Points: {houseRa.results[1].current_points}
+                  Points: {houseRa.results[0].current_points}
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -186,7 +186,7 @@ const Houses = () => {
               <Card.Img variant="top" src={hufflepuff} />
               <Card.Body>
                 <Badge className={styles.Badge}>
-                  <Card.Title>{houseHu.results[3].house_name}</Card.Title>
+                  <Card.Title>{houseHu.results[2].house_name}</Card.Title>
                 </Badge>
                 <Button
                   className={btnStyles.Button}
@@ -196,9 +196,9 @@ const Houses = () => {
                 </Button>
                 <Modal show={showHufflepuff} onHide={handleHufflepuffClose}>
                   <Modal.Header closeButton>
-                    <Modal.Title>{houseHu.results[3].house_name}</Modal.Title>
+                    <Modal.Title>{houseHu.results[2].house_name}</Modal.Title>
                   </Modal.Header>
-                  <Modal.Body>{houseHu.results[3].description}</Modal.Body>
+                  <Modal.Body>{houseHu.results[2].description}</Modal.Body>
                   <Modal.Footer>
                     <Button
                       className={btnStyles.Button}
@@ -209,7 +209,7 @@ const Houses = () => {
                   </Modal.Footer>
                 </Modal>
                 <Card.Text className={`${styles.Badge} pb-2 `}>
-                  Points: {houseHu.results[3].current_points}
+                  Points: {houseHu.results[2].current_points}
                 </Card.Text>
               </Card.Body>
             </Card>
