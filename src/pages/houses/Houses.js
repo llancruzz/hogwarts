@@ -64,9 +64,8 @@ const Houses = () => {
           axiosReq.get(`/houses/`),
         ]);
         setHouseProfile({ results: [houseProfile] });
-        console.log(houseProfile);
       } catch (err) {
-        console.log(err);
+       // console.log(err);
       }
     };
     handleMount();

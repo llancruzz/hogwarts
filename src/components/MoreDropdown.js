@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../styles/MoreDropdown.module.css";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useHistory } from "react-router";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 // The forwardRef is important!!
 // Dropdown needs access to the DOM node in order to position the Menu
@@ -28,14 +29,18 @@ export const MoreDropdown = ({ handleEdit, handleDelete }) => {
           onClick={handleEdit}
           aria-label="edit"
         >
-          <i className="fas fa-edit" />
+          <OverlayTrigger placement="top" overlay={<Tooltip>EDIT</Tooltip>}>
+            <i className="fas fa-edit" />
+          </OverlayTrigger>
         </Dropdown.Item>
         <Dropdown.Item
           className={styles.DropdownItem}
           onClick={handleDelete}
           aria-label="delete"
         >
-          <i className="fas fa-trash-alt" />
+          <OverlayTrigger placement="top" overlay={<Tooltip>DELETE</Tooltip>}>
+            <i className="fas fa-trash-alt" />
+          </OverlayTrigger>
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
