@@ -7,10 +7,6 @@ import Container from "react-bootstrap/Container";
 import Modal from "react-bootstrap/Modal";
 import Row from "react-bootstrap/Row";
 import styles from "../../styles/Houses.module.css";
-import slytherin from "../../assets/slytherin.webp";
-import ravenclaw from "../../assets/havenclaw.webp";
-import hufflepuff from "../../assets/hufflepuff.webp";
-import gryffindor from "../../assets/gryffindor.webp";
 import btnStyles from "../../styles/Button.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
@@ -19,26 +15,12 @@ import { useParams } from "react-router-dom";
 const Houses = () => {
   useRedirect("loggedOut");
   /*
-  Create each handle show and close for each house:
+  Handle modalId to show and close for each house:
   Control the display of each modal independently.
   Prevent issue that opens up all the modals simultaneously with the same title and description.
   */
-  const [showGryffindor, setShowGryffindor] = useState(false);
-  const [showSlytherin, setShowSlytherin] = useState(false);
-  const [showRavenclaw, setShowRavenclaw] = useState(false);
-  const [showHufflepuff, setShowHufflepuff] = useState(false);
-
-  const handleGryffindorShow = () => setShowGryffindor(true);
-  const handleGryffindorClose = () => setShowGryffindor(false);
-
-  const handleSlytherinShow = () => setShowSlytherin(true);
-  const handleSlytherinClose = () => setShowSlytherin(false);
-
-  const handleRavenclawShow = () => setShowRavenclaw(true);
-  const handleRavenclawClose = () => setShowRavenclaw(false);
-
-  const handleHufflepuffShow = () => setShowHufflepuff(true);
-  const handleHufflepuffClose = () => setShowHufflepuff(false);
+  const [modalId, setModalId] = useState("");
+  const handleClose = () => setModalId("");
 
   /*
   Fetch data about the house profile with the id that is in the url. 
@@ -60,10 +42,8 @@ const Houses = () => {
   useEffect(() => {
     const handleMount = async () => {
       try {
-        const [{ data: houseProfile }] = await Promise.all([
-          axiosReq.get(`/houses/`),
-        ]);
-        setHouseProfile({ results: [houseProfile] });
+        const { data } = await axiosReq.get(`/houses/`);
+        setHouseProfile(data);
       } catch (err) {
         // console.log(err);
       }
@@ -74,147 +54,42 @@ const Houses = () => {
   return (
     <Container className={styles.Container}>
       <Row>
-        <Col md={3} sm={6}>
-          {houseProfile.results.map((houseGr) => (
-            <Card className={styles.Card} key={houseGr}>
-              <Card.Img variant="top" src={gryffindor} />
+        {houseProfile.results.map((house, index) => (
+          <Col md={3} sm={6} key={index}>
+            <Card className={styles.Card} key={index}>
+              <Card.Img
+                variant="top"
+                src={require(`../../assets/${house.house_name}.webp`).default}
+              />
               <Card.Body>
                 <Badge className={styles.Badge}>
-                  <Card.Title>{houseGr.results[1].house_name}</Card.Title>
+                  <Card.Title>{house.house_name}</Card.Title>
                 </Badge>
 
                 <Button
                   className={btnStyles.Button}
-                  onClick={handleGryffindorShow}
+                  onClick={() => setModalId(`modal${index}`)}
                 >
                   Description
                 </Button>
-                <Modal show={showGryffindor} onHide={handleGryffindorClose}>
+                <Modal show={modalId === `modal${index}`} onHide={handleClose}>
                   <Modal.Header closeButton>
-                    <Modal.Title>{houseGr.results[1].house_name}</Modal.Title>
+                    <Modal.Title>{house.house_name}</Modal.Title>
                   </Modal.Header>
-                  <Modal.Body>{houseGr.results[1].description}</Modal.Body>
+                  <Modal.Body>{house.description}</Modal.Body>
                   <Modal.Footer>
-                    <Button
-                      className={btnStyles.Button}
-                      onClick={handleGryffindorClose}
-                    >
+                    <Button className={btnStyles.Button} onClick={handleClose}>
                       Close
                     </Button>
                   </Modal.Footer>
                 </Modal>
                 <Card.Text className={`${styles.Badge} pb-2 `}>
-                  Points: {houseGr.results[1].current_points}
+                  Points: {house.current_points}
                 </Card.Text>
               </Card.Body>
             </Card>
-          ))}
-        </Col>
-        <Col md={3} sm={6}>
-          {houseProfile.results.map((houseSy) => (
-            <Card className={styles.Card} key={houseSy}>
-              <Card.Img variant="top" src={slytherin} />
-              <Card.Body>
-                <Badge className={styles.Badge}>
-                  <Card.Title>{houseSy.results[3].house_name}</Card.Title>
-                </Badge>
-                <Button
-                  className={btnStyles.Button}
-                  onClick={handleSlytherinShow}
-                >
-                  Description
-                </Button>
-                <Modal show={showSlytherin} onHide={handleSlytherinClose}>
-                  <Modal.Header closeButton>
-                    <Modal.Title>{houseSy.results[3].house_name}</Modal.Title>
-                  </Modal.Header>
-                  <Modal.Body>{houseSy.results[3].description}</Modal.Body>
-                  <Modal.Footer>
-                    <Button
-                      className={btnStyles.Button}
-                      onClick={handleSlytherinClose}
-                    >
-                      Close
-                    </Button>
-                  </Modal.Footer>
-                </Modal>
-                <Card.Text className={`${styles.Badge} pb-2 `}>
-                  Points: {houseSy.results[3].current_points}
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          ))}
-        </Col>
-        <Col md={3} sm={6}>
-          {houseProfile.results.map((houseRa) => (
-            <Card className={styles.Card} key={houseRa}>
-              <Card.Img variant="top" src={ravenclaw} />
-              <Card.Body>
-                <Badge className={styles.Badge}>
-                  <Card.Title>{houseRa.results[0].house_name}</Card.Title>
-                </Badge>
-                <Button
-                  className={btnStyles.Button}
-                  onClick={handleRavenclawShow}
-                >
-                  Description
-                </Button>
-                <Modal show={showRavenclaw} onHide={handleRavenclawClose}>
-                  <Modal.Header closeButton>
-                    <Modal.Title>{houseRa.results[0].house_name}</Modal.Title>
-                  </Modal.Header>
-                  <Modal.Body>{houseRa.results[0].description}</Modal.Body>
-                  <Modal.Footer>
-                    <Button
-                      className={btnStyles.Button}
-                      onClick={handleRavenclawClose}
-                    >
-                      Close
-                    </Button>
-                  </Modal.Footer>
-                </Modal>
-                <Card.Text className={`${styles.Badge} pb-2 `}>
-                  Points: {houseRa.results[0].current_points}
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          ))}
-        </Col>
-        <Col md={3} sm={6}>
-          {houseProfile.results.map((houseHu) => (
-            <Card className={styles.Card} key={houseHu}>
-              <Card.Img variant="top" src={hufflepuff} />
-              <Card.Body>
-                <Badge className={styles.Badge}>
-                  <Card.Title>{houseHu.results[2].house_name}</Card.Title>
-                </Badge>
-                <Button
-                  className={btnStyles.Button}
-                  onClick={handleHufflepuffShow}
-                >
-                  Description
-                </Button>
-                <Modal show={showHufflepuff} onHide={handleHufflepuffClose}>
-                  <Modal.Header closeButton>
-                    <Modal.Title>{houseHu.results[2].house_name}</Modal.Title>
-                  </Modal.Header>
-                  <Modal.Body>{houseHu.results[2].description}</Modal.Body>
-                  <Modal.Footer>
-                    <Button
-                      className={btnStyles.Button}
-                      onClick={handleHufflepuffClose}
-                    >
-                      Close
-                    </Button>
-                  </Modal.Footer>
-                </Modal>
-                <Card.Text className={`${styles.Badge} pb-2 `}>
-                  Points: {houseHu.results[2].current_points}
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          ))}
-        </Col>
+          </Col>
+        ))}
       </Row>
     </Container>
   );
