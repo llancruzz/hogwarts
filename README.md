@@ -369,7 +369,7 @@ Separate testing documentation can be viewed [here](TESTING.md).
 
 #### Remaining Bugs
 - To utilize the Hogwarts web app on iOS devices, Safari on MacOS, Samsung Internet on Samsung devices, and potentially other platforms, users must disable their anti-tracking features such as 'Prevent Cross-Site Tracking' on Apple devices or 'Smart Anti-Tracking' on Samsung devices. This is necessary because the web app's Django Rest Framework API and React front-end are hosted on separate domains through Heroku, thereby triggering the anti-tracking mechanisms which obstruct cross-domain requests from the front end to the API. Unfortunately, it appears that there is no solution available other than hosting the API and front end on the same domain. (reference - https://stackoverflow.com/questions/56972162/is-there-a-workaround-for-safari-ios-prevent-cross-site-tracking-option-when).
-- Upon logging in, I noticed that the follow and unfollow buttons require a page refresh to function properly. I suspect that this is a token defect, as even the tutors were unable to comprehend the issue. Given the time constraints for project submission, I have taken the initiative to report the bug. However, I intend to devote further research to discovering a viable solution. Once the issue has been resolved, I plan to share the solution with the Slack Code Institute Community so that future students encountering the same problem may benefit from the information.
+- Upon logging in, I noticed that the follow and unfollow buttons require a page refresh to function properly in my laptop on "most followed profiles" component. I suspect that it could be an token defect, as even the tutors were unable to comprehend the issue because they couldn't see anything about it, everything works fine for them. Also, after a few minutes, my page works fine as well. I guess it’s possible that there could be a delay in the authentication process due to various factors such as server load or network latency, Heroku etc. Given the time constraints for project submission, I have taken the initiative to report the bug. However, I intend to devote further research to discovering a viable solution. Once the issue has been resolved, I plan to share the solution with the Slack Code Institute Community so that future students encountering the same problem may benefit from the information.
 
 ## Technologies Used
 
@@ -412,9 +412,9 @@ By forking the GitHub Repository we make a copy of the original repository on
 our GitHub account to view and/or make changes without affecting the original
 repository by using the following steps...
 
-1. Log in to GitHub and locate the [GitHub
+1. Log in to Gionub and locate the [GitHub
    Repository](https://github.com/ianmeigh/property-direct-backend)
-1. At the top of the Repository (not the top of page) just above the "Settings"
+1. At the top of the Repository (not the top of thepage) just above the "Settings"
    Button on the menu, locate the "Fork" Button.
 1. Click the button (not the number to the right) and you should now have a copy
    of the original repository in your GitHub account.
